@@ -1,0 +1,12 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+
+# Node (only if tooling is added later)
+node_modules/
+.wrangler/
+
+# Local env
+.env
+.env.*

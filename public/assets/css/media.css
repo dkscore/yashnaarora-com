@@ -1,0 +1,930 @@
+
+
+@media only screen and (min-width:1200px) and (max-width:1366px) {
+    .body_brd::before {
+        left: 4.5rem;
+    }
+
+    .body_brd::after {
+        right: 4.5rem;
+    }
+
+    .footer_bg::before {
+        width: 4.5rem;
+    }
+
+    .footer_bg::after {
+        width: 4.5rem;
+    }
+
+    img.ux_highlight5 {
+        position: absolute;
+        top: 56.8%;
+        left: -65px;
+        max-width: 100%;
+        width: 670px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .navbar_pad.container-fluid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .body_brd::before {
+        border-left: none;
+    }
+
+    .body_brd::after {
+        border-right: none;
+    }
+
+    .navbar_bg {
+        height: auto;
+        padding: 20px 0px;
+    }
+
+    ul.custom_navbar {
+        min-height: 93vh;
+    }
+
+    ul.custom_navbar li a {
+        font-size: 20px;
+    }
+
+    ul.header_section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container.container_custom {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .research_section {
+        padding: 40px 0px;
+    }
+
+    .research_content p {
+        max-width: 100%;
+    }
+
+    .researc_footer {
+        margin-bottom: 30px;
+    }
+
+    .secondaryresearch_section {
+        padding: 40px 0px 0px 0px;
+    }
+
+    .discover_content {
+        padding: 40px 0px 0px 0px;
+    }
+
+    .discover_content p {
+        max-width: 100%;
+        margin: 20px;
+    }
+
+    .literatire_view {
+        margin-bottom: 40px;
+    }
+
+    .personal_card_bg {
+        padding: 15px;
+    }
+
+    ul.stake_list li:nth-child(1),
+    ul.stake_list li:nth-child(2) {
+        width: 50%;
+        padding: 0px 0px 20px 0px;
+    }
+
+    ul.stake_list li h5,
+    .object_head {
+        font-size: 14px;
+    }
+
+    ul.stake_list li h6 {
+        font-size: 16px;
+    }
+
+    .pain_card {
+        padding: 10px;
+        margin: 20px 0px;
+    }
+
+    ul.swot_list {
+        flex-direction: column;
+    }
+
+    ul.swot_list li {
+        width: 100%;
+    }
+
+    /* .weeakness_bg, .threat_bg, .opportunties_bg{
+        min-height: auto;
+    } */
+    .brain_section {
+        padding: 40px 0px;
+    }
+
+    .science_sol {
+        flex-direction: column;
+    }
+
+    .celebrate {
+        flex-direction: column-reverse;
+    }
+
+    .celebrate h4 {
+        width: 100%;
+    }
+
+    .scienc_colcontent {
+        width: 100%;
+        padding: 20px 0px 0px 0px;
+    }
+
+    ul.screen_list {
+        flex-direction: column;
+    }
+
+    ul.screen_list li {
+        width: 100%;
+        padding: 0px 0px 10px 0px;
+    }
+
+    ul.objective_list {
+        justify-content: flex-start;
+    }
+
+    .final_pro {
+        margin: 20px 0px 0px 0px;
+    }
+
+    img.space_img {
+        margin: 0px auto;
+    }
+
+    .cons_head ul li h5 {
+        font-size: 12px;
+        line-height: 25px;
+    }
+
+    .cons_head ul li img {
+        margin: 0px 5px 0px 0px;
+        width: 20px;
+    }
+
+    .conduct_bg {
+        padding: 10px;
+        margin: 0px 0px 30px 0px;
+    }
+
+    .discover_content h3 {
+        font-size: 20px;
+    }
+
+    .discover_content h6 {
+        font-size: 14px;
+    }
+
+    .discover_content p {
+        font-size: 14px;
+        margin: 10px 20px;
+    }
+
+    .conduct_bg h4 {
+        font-size: 18px;
+    }
+
+    .discover_content p.research_para {
+        margin-right: 0px;
+    }
+
+    .signmal_list_wid {
+        width: auto;
+    }
+
+    .personal_card {
+        padding-right: 0;
+    }
+
+    .personal_card h4 {
+        font-size: 14px;
+    }
+
+    .personal_card h3 {
+        font-size: 20px;
+        margin: 10px 0px;
+    }
+
+    .personal_card p {
+        font-size: 14px;
+    }
+
+    .pain_card h2 {
+        font-size: 18px;
+        margin: 10px 0px;
+    }
+
+    .pain_card h4 {
+        font-size: 14px;
+    }
+
+    ul.pain_card_list li h5 {
+        font-size: 14px;
+    }
+
+    .pain_point h5 {
+        font-size: 20px;
+    }
+
+    .com_desc {
+        font-size: 14px;
+    }
+
+    .pain_point h6 {
+        font-size: 16px;
+    }
+
+    .pain_point p.brain_des {
+        font-size: 14px;
+        margin: 10px 0px;
+    }
+
+    img.prototype_img {
+        margin: 0px auto;
+    }
+
+    .problem_bg {
+        margin: 0px;
+    }
+
+    .process_section {
+        padding: 40px 0px;
+    }
+
+    .process_head_ist {
+        flex-direction: column;
+    }
+
+    .process_head_ist h6 {
+        width: 100%;
+    }
+
+    ul.process_img_list {
+        flex-direction: column;
+    }
+
+    ul.process_img_list li {
+        width: 100%;
+        padding: 0px 0px 10px 0px;
+    }
+
+    ul.process_img_list.process_img_list2 li {
+        width: 100%;
+    }
+
+    .footer_bg::after,
+    .footer_bg::before {
+        width: 0;
+    }
+
+    .about_section {
+        padding: 80px 0px;
+    }
+
+    .about_content h1 {
+        font-size: 22px;
+    }
+
+    .about_content p {
+        font-size: 14px;
+        margin: 10px 0px;
+    }
+
+    ul.footer_list.footer_list_mob {
+        padding-left: 0;
+        border-left: none;
+    }
+
+    ul.footer_list li h6 {
+        font-size: 12px;
+    }
+
+    ul.footer_list li a {
+        font-size: 12px;
+    }
+
+    .research_content h1 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .research_content h3 {
+        font-size: 14px;
+    }
+
+    .researc_footer h4,
+    .exp_desc {
+        font-size: 14px;
+    }
+
+    .researc_footer ul li h6 {
+        font-size: 15px;
+    }
+
+    .project_brief h3 {
+        font-size: 18px;
+    }
+
+    .project_brief p,
+    .stat_design h4,
+    .day_content p {
+        font-size: 14px;
+    }
+
+    .discover_content h4,
+    .pain_point_leftbrd ul li h6 span,
+    .pain_point p span.painred,
+    .pain_point p span.painblack,
+    .propsed_head h3,
+    .scienc_colcontent h5,
+    .final_pro h5,
+    .problem_bg h5,
+    .process_head h5,
+    .stat_design h5,
+    .mykey_content h4,
+    .experience_head,
+    .research_content p,
+    .research_content h5,
+    .wall_content h3,
+    .insp_picture h5,
+    .day_title h4 {
+        font-size: 16px;
+    }
+
+    .insp_picture h5 {
+        margin: 20px 0px;
+    }
+
+    .wall_content h3 {
+        line-height: 25px;
+        margin: 10px 0px;
+    }
+
+    .ins_img {
+        margin: 0px 0px 20px 0px;
+    }
+
+    .experience_head {
+        margin: 20px 0px 10px 0px;
+    }
+
+    .literatire_view h4,
+    .syns_research h4,
+    .process_head_ist h6 {
+        font-size: 14px;
+    }
+
+    .discover_content h4.quest_head,
+    .stat_design h3 {
+        font-size: 18px;
+    }
+
+    .stat_design h3 {
+        margin: 10px 0px;
+    }
+
+    .prototype_content h4,
+    .problem_bg h6 {
+        font-size: 20px;
+    }
+
+    .scienc_colcontent h4,
+    .celebrate h4 {
+        font-size: 22px;
+        line-height: 35px;
+    }
+
+    .container-fluid.navbar_pad2 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .strat_bg {
+        min-height: 250px;
+        margin-top: 50px;
+    }
+
+    img.stat_logo {
+        width: 250px;
+    }
+
+    .strat_section {
+        padding: 40px 0px;
+    }
+
+    .stat_design p {
+        font-size: 16px;
+    }
+
+    .mykey_section {
+        padding: 40px 0px;
+    }
+
+    .wall_content h1 span {
+        font-size: 26px;
+    }
+
+    .schedule_content {
+        padding-top: 20px;
+    }
+
+    .wall_section,
+    .finalproductsection {
+        padding: 40px 0px;
+    }
+
+    .day_title img {
+        margin: 20px 0px;
+        display: block;
+    }
+
+    .day_bg {
+        padding: 30px 0px;
+    }
+
+    .day_content h3 {
+        font-size: 20px;
+    }
+
+    .day_title {
+        margin-bottom: 30px;
+    }
+
+    .mydesign {
+        padding-top: 70px;
+    }
+
+    .wall_content {
+        padding-top: 50px;
+    }
+
+    .simple_wordvideo {
+        margin: 0;
+    }
+
+    .images_overflow {
+        height: 40vh;
+    }
+
+    .propsed_section {
+        padding: 40px 0px 0px 0px;
+    }
+
+    .unlock_home {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .dash_page2 {
+        width: 100%;
+    }
+
+    .celebrate h4.dash_content2 {
+        margin: 10px 0px;
+    }
+
+    .navbar_vertical {
+        position: relative;
+        top: 0;
+        margin: 0px auto;
+    }
+
+    ul.navbar_stick {
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .scienc_colcontent h5.dash_page {
+        font-size: 22px;
+    }
+
+    .design_section {
+        padding: 40px 0px 0px 0px;
+    }
+
+    .desiproblem_content h2 {
+        font-size: 22px;
+    }
+
+    img.shape_img {
+        left: 70%;
+        width: 150px;
+    }
+
+    .userresarch {
+        padding: 40px 0px 0px 0px;
+    }
+
+    .userresarch h4,
+    .survey h3 {
+        font-size: 22px;
+    }
+
+    .key_insight {
+        padding: 40px 0px 20px 0px;
+    }
+
+    .carousel-control-next.carousel-control-next_custom {
+        right: 0;
+    }
+
+    .carousel-control-next.carousel-control-next_custom img,
+    .carousel-control-prev.carousel-control-prev_custom img {
+        width: 30px;
+    }
+
+    .carousel-control-prev.carousel-control-prev_custom {
+        left: 0;
+    }
+
+    .carousel-indicators_custom {
+        width: 60px;
+        height: 20px;
+    }
+
+    .carousel-indicators_custom button {
+        width: 7px !important;
+        height: 7px !important;
+    }
+
+    .carousel-indicators.carousel-indicators_pos {
+        bottom: -50px;
+    }
+
+    .userresarch p {
+        font-size: 16px;
+    }
+
+    .app_bg h3 {
+        font-size: 24px;
+    }
+
+    .userexperience_content {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .exp_content h3 {
+        font-size: 18px;
+    }
+
+    .exp_content h2 {
+        font-size: 22px;
+        line-height: 35px;
+    }
+
+    .exp_content {
+        min-height: auto;
+    }
+
+    .word_card_content h4 {
+        font-size: 16px;
+    }
+
+    .word_card_content h3 {
+        font-size: 24px;
+    }
+
+    .word_card_content {
+        padding: 15px;
+    }
+
+    .word_card {
+        flex-direction: column-reverse;
+    }
+
+    .wordcard_tag {
+        width: 100%;
+        margin: 20px 0px;
+    }
+
+    .wordcard_img {
+        width: 100%;
+    }
+
+    .header_bg_nopag {
+        padding-bottom: 0;
+    }
+
+    img.circle_pos,
+    img.cylinder_pos,
+    img.cube_pos,
+    img.triangle_pos,
+    img.star_pos {
+        width: 50px;
+    }
+
+    .word_card {
+        padding: 10px;
+    }
+
+    .wordcard_imgbg {
+        flex-direction: column;
+    }
+
+    .straatgile_bg img {
+        width: 100%;
+    }
+
+    .straatgile_bg {
+        min-height: 200px;
+    }
+
+    .slide3_img {
+        width: 110px;
+        transform: rotate(-30deg) translateY(0%) translateX(140%);
+    }
+
+    @keyframes sildeanimation1 {
+        from {
+            transform: rotate(-30deg) translateY(0%) translateX(140%);
+        }
+
+        to {
+            transform: rotate(-30deg) translateY(-30%) translateX(140%);
+        }
+    }
+
+    .desiproblem_content2 h2 {
+        padding-top: 0;
+    }
+
+    .slide4_img {
+        width: 100%;
+    }
+
+    .celebrate_mar {
+        margin-top: 0;
+    }
+
+    .celb_pad_text {
+        padding-left: 0;
+    }
+
+    .scienc_colcontent h5.dash_page {
+        padding-bottom: 100px;
+    }
+
+    .high_f_design h5 {
+        margin: 20px 0px;
+    }
+
+    img.nobrd_radius {
+        width: 100%;
+    }
+
+    .slide1_img {
+        transform: rotate(-30deg) translateY(0%) translateX(-30%);
+    }
+
+    @keyframes sildeanimation3 {
+        from {
+            transform: rotate(-30deg) translateY(-30%) translateX(-30%);
+        }
+
+        to {
+            transform: rotate(-30deg) translateY(0%) translateX(-30%);
+        }
+    }
+
+    .slide2_img {
+        transform: rotate(-30deg) translateY(-40%) translateX(130%);
+    }
+
+    @keyframes sildeanimation2 {
+        from {
+            transform: rotate(-30deg) translateY(-40%) translateX(130%);
+        }
+
+        to {
+            transform: rotate(-30deg) translateY(0%) translateX(130%);
+        }
+    }
+
+    .slide5_img {
+        transform: rotate(-30deg) translateY(-40%) translateX(230%);
+    }
+
+    @keyframes sildeanimation5 {
+        from {
+            transform: rotate(-30deg) translateY(-40%) translateX(230%);
+        }
+
+        to {
+            transform: rotate(-30deg) translateY(0%) translateX(230%);
+        }
+    }
+
+    .slide4_img {
+        width: 120px;
+    }
+
+    .scienc_colcontent_mob {
+        margin-top: -100px;
+    }
+
+    .scienc_colcontent.scienc_colcontent_mob h5.dash_page {
+        padding-bottom: 0;
+    }
+
+    img.surveycontent_img {
+        object-fit: contain;
+    }
+
+    .high_f_design h5 {
+        font-size: 22px;
+    }
+
+    .iteration_bg {
+        padding: 15px;
+    }
+
+    .key_insight h4 {
+        font-size: 22px;
+    }
+
+    img.yashna_img_about {
+        width: 80px;
+        height: 80px;
+    }
+
+    .yashna_img {
+        width: 60px;
+        height: 60px;
+        margin: 0px 25px 10px 0px;
+    }
+
+    .mining_bannerbg {
+        margin: 100px auto 20px auto;
+    }
+
+    .highlight_card {
+        padding: 20px;
+    }
+
+    ul.higlightarea_list li h6 {
+        font-size: 14px;
+    }
+
+    ul.prob_det {
+        flex-direction: column;
+    }
+
+    ul.prob_det li.the_problem_wid {
+        width: 100%;
+    }
+
+    ul.prob_det li h4 {
+        font-size: 20px;
+        padding: 0px 0px 20px 0px;
+    }
+
+    ul.prob_det li p {
+        font-size: 16px;
+    }
+
+    .dis_card h5 {
+        font-size: 16px;
+    }
+
+    .comp_con {
+        padding: 40px 0px 0px 0px;
+    }
+
+    .comp_con h3 {
+        font-size: 16px;
+    }
+
+    .low_mobile {
+        margin: 100px 0px 30px 0px;
+    }
+
+    .landing_flex {
+        flex-direction: column;
+    }
+
+    .landing_sub_pos {
+        width: 100%;
+    }
+
+    ul.mobile_friendly_list li h5,
+    .mobile_friendly h4 {
+        font-size: 16px;
+    }
+
+    .ux_head h4 {
+        font-size: 20px;
+    }
+
+    img.ux_highlight {
+        width: 170px;
+        inset: 20px 0px 0px 0px;
+    }
+
+    img.ux_highlight2 {
+        width: 170px;
+        inset: 14px 0px 0px auto;
+    }
+
+    img.ux_highlight4 {
+        width: 120px;
+        inset: 31% 0px 0px auto;
+    }
+
+    img.ux_highlight3 {
+        width: 100px;
+        inset: 29% 0px 0 33%;
+    }
+
+    img.ux_highlight6 {
+        width: 160px;
+        top: 69.3%;
+        right: 0;
+    }
+
+    img.ux_highlight5 {
+        width: 180px;
+        position: absolute;
+        top: 64%;
+        left: 0;
+    }
+
+    .prototype_section,
+    .uxsectionpad {
+        padding: 30px 0px;
+    }
+
+    .breakdown_flex {
+        flex-direction: column;
+    }
+
+    .braekdown_head h3 {
+        font-size: 20px;
+    }
+
+    .miningvideo {
+        inset: 10px 0 0 46px;
+        width: 69%;
+        height: 79%;
+    }
+
+    .focus_video {
+        margin-bottom: 20px;
+    }
+
+    .low_mobile h3 {
+        font-size: 20px;
+    }
+
+    .redesign_bg h3 {
+        font-size: 18px;
+        height: 50px;
+    }
+
+    .redesign_bg h3 {
+        margin: 50px 0px 50px 0px;
+    }
+
+    .sub_sol {
+        padding-top: 60px;
+    }
+
+    .resdesign_section {
+        padding: 0px 0px 50px 0px;
+    }
+
+    .resdesign_section::before,
+    .resdesign_section::after {
+        background: none;
+    }
+
+    .mining_footervideo {
+        height: 77%;
+        top: 15px;
+        left: 50px;
+        width: 71%;
+    }
+    .toogle_right{
+        align-items: center;
+    }
+    .toogle_right h4{
+        font-size: 16px;
+    }
+}
