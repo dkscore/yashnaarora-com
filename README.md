@@ -18,3 +18,5 @@ Then open the printed localhost URL.
 ## Deploy
 Connected to **Cloudflare Pages** (project `yashna-arora-com`, domain yashnaarora.com).
 Every push to `main` auto-deploys. Build command: _none_. Output directory: `/` (root).
+
+<!-- git-deploy pipeline verified test-deploy -->
