@@ -1,240 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<title>Yashna Arora</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no" />
-	<link rel="stylesheet" href="public/assets/css/style.css?v=1.4" />
-	<link rel="stylesheet" href="public/assets/css/media.css?v=1.4" />
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stratagile · UX Design &amp; Business Analysis · Yashna Arora</title>
+<meta name="description" content="Yashna Arora's Stratagile internship case study: UX design and business analysis in Singapore.">
+<meta name="theme-color" content="#0A0A0C">
+<link rel="canonical" href="https://yashnaarora.com/stratagile.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yashnaarora.com/stratagile.html">
+<meta property="og:title" content="Stratagile · UX Design &amp; Business Analysis">
+<meta property="og:description" content="Internship case study: UX design and business analysis.">
+<meta property="og:image" content="https://yashnaarora.com/public/assets/images/yashan.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script>(function(){var r=document.documentElement;try{var t=localStorage.getItem('ya-theme');if(t)r.setAttribute('data-theme',t)}catch(e){}try{new MutationObserver(function(){try{localStorage.setItem('ya-theme',r.getAttribute('data-theme')||'dark')}catch(e){}}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%236D5AE6'/><text x='50' y='70' font-size='60' font-family='Georgia,serif' font-weight='700' fill='white' text-anchor='middle'>Y</text></svg>">
 </head>
+<body>
+<style>
+  :root{
+    --bg:#0A0A0C; --bg2:#141417; --bg3:#1C1C21;
+    --text:#F5F5F7; --muted:#9a9aa2; --faint:#6b6b72;
+    --line:rgba(255,255,255,.09); --line-s:rgba(255,255,255,.17);
+    --accent:#EAB93B; --accent-soft:rgba(234,185,59,.15); --accent-ink:#1a1608;
+    --cream:#F6EFD6; --cream-ink:#2A2205; --cream-mut:#7A6420; --cream-line:rgba(60,48,10,.16);
+    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Helvetica Neue",Arial,sans-serif;
+    --mono:var(--sans); --maxw:1080px; --gutter:clamp(20px,5vw,64px);
+  }
+  :root[data-theme="light"]{
+    --bg:#FBFBFC; --bg2:#FFFFFF; --bg3:#F1F1F5;
+    --text:#17171a; --muted:#5c5c64; --faint:#9a9aa2;
+    --line:rgba(0,0,0,.10); --line-s:rgba(0,0,0,.16);
+    --accent:#8A6410; --accent-soft:rgba(138,100,16,.12); --accent-ink:#FFFFFF;
+  }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; line-height:1.55; letter-spacing:-.012em; transition:background .4s,color .4s}
+  a{color:inherit; text-decoration:none} img{max-width:100%; display:block}
+  ::selection{background:var(--accent-soft)}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 var(--gutter)}
+  .nav{position:fixed; top:0; left:0; right:0; z-index:70; height:56px; display:flex; align-items:center; justify-content:space-between; padding:0 var(--gutter); background:transparent; border-bottom:1px solid transparent; transition:background .3s,border-color .3s}
+  .nav.scrolled{background:color-mix(in srgb,var(--bg) 72%, transparent); backdrop-filter:saturate(160%) blur(18px); -webkit-backdrop-filter:saturate(160%) blur(18px); border-bottom-color:var(--line)}
+  .nav .brand{font-weight:700; font-size:16px; letter-spacing:-.03em; color:var(--cream-ink); transition:color .3s} .nav .brand span{color:var(--accent)}
+  .nav.scrolled .brand{color:var(--text)}
+  .nav-right{display:flex; align-items:center; gap:18px}
+  .nav .back{font-size:14px; color:var(--cream-mut); display:inline-flex; align-items:center; gap:7px; transition:color .3s} .nav.scrolled .back{color:var(--muted)} .nav .back:hover{color:var(--accent)} .nav .back svg{width:15px;height:15px}
+  .theme-btn{background:none; border:1px solid var(--cream-line); color:var(--cream-mut); width:34px; height:34px; border-radius:50%; cursor:pointer; display:grid; place-items:center; transition:color .25s,border-color .25s} .nav.scrolled .theme-btn{border-color:var(--line-s); color:var(--muted)} .theme-btn:hover{color:var(--accent); border-color:var(--accent)} .theme-btn svg{width:15px;height:15px}
+  /* COVER — centred animated wordmark on warm gold */
+  .cover{position:relative; min-height:92vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:80px var(--gutter) 60px; background:var(--cream); perspective:1000px}
+  .cover-eyebrow{font-family:var(--mono); font-size:13px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--cream-mut)}
+  .flipword{display:inline-block; transform-style:preserve-3d; transition:transform .16s ease-out; letter-spacing:-.03em; font-size:clamp(54px,12vw,138px); line-height:.9; font-weight:700; margin:18px 0 14px; cursor:pointer; color:var(--cream-ink); text-shadow:0 12px 26px rgba(60,48,10,.20)}
+  .cover-sub{font-size:clamp(15px,2vw,20px); font-weight:600; color:var(--cream-mut); letter-spacing:-.01em; margin-top:26px}
+  .cover-scroll{position:absolute; bottom:26px; left:50%; font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--cream-mut); animation:bob 1.9s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)} 50%{transform:translate(-50%,7px)}}
+  /* DARK body */
+  .intro{padding:clamp(58px,9vh,104px) 0 0}
+  .eyebrow{font-family:var(--mono); font-size:13px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--accent)}
+  .intro .lead{font-size:clamp(18px,2.4vw,26px); font-weight:600; letter-spacing:-.02em; line-height:1.42; color:var(--text); margin:16px 0 0; max-width:64ch}
+  .meta{display:flex; flex-wrap:wrap; gap:24px 44px; margin-top:38px; padding-top:26px; border-top:1px solid var(--line)}
+  .meta .m{display:flex; flex-direction:column; gap:8px}
+  .meta .k{font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--accent)}
+  .meta .v{font-size:14.5px; color:var(--text)}
+  /* ABOUT band — left aligned, bubble clients */
+  .about{background:var(--bg2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:clamp(48px,7vh,82px) 0; margin-top:clamp(48px,7vh,90px); text-align:left}
+  .sec-head h2{font-size:clamp(26px,4vw,42px); font-weight:700; letter-spacing:-.04em; margin:0; text-wrap:balance}
+  p.prose{font-size:16px; color:var(--muted); line-height:1.72; margin:22px 0 0; max-width:72ch} p.prose b{color:var(--text); font-weight:600}
+  .clab{font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); margin-top:34px}
+  .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+  .chips span{font-size:14px; font-weight:600; color:var(--text); background:var(--bg); border:1px solid var(--line-s); border-radius:999px; padding:10px 18px; transition:border-color .25s,color .25s}
+  .chips span:hover{border-color:var(--accent); color:var(--accent)}
+  .section{padding:clamp(48px,7vh,86px) 0}
+  .section+.section{border-top:1px solid var(--line)}
+  .ctribs{display:grid; gap:16px; margin-top:30px}
+  .cx{display:grid; grid-template-columns:auto 1fr; gap:20px; background:var(--bg2); border:1px solid var(--line); border-radius:18px; padding:26px clamp(20px,3vw,30px)}
+  @media(max-width:600px){.cx{grid-template-columns:1fr; gap:14px}}
+  .cx .ic{width:46px; height:46px; border-radius:13px; background:var(--accent-soft); color:var(--accent); display:grid; place-items:center; flex:none} .cx .ic svg{width:22px;height:22px}
+  .cx h4{font-size:18px; font-weight:700; letter-spacing:-.02em; margin:2px 0 10px}
+  .cx p{font-size:15px; color:var(--muted); line-height:1.65; margin:0}
+  .cx .tg{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px} .cx .tg span{font-size:12px; font-weight:600; color:var(--accent); background:var(--accent-soft); border-radius:999px; padding:5px 12px}
+  .nda{display:flex; align-items:center; gap:13px; margin-top:16px; padding:18px 22px; border:1px dashed var(--line-s); border-radius:16px; color:var(--muted); font-size:14.5px}
+  .nda svg{width:19px;height:19px;color:var(--faint);flex:none}
+  .quote{margin-top:26px; padding:26px clamp(22px,3vw,32px); border-left:3px solid var(--accent); background:var(--bg2); border-radius:0 16px 16px 0; font-size:clamp(16px,2vw,19px); line-height:1.6; color:var(--text)}
+  .foot{padding:38px var(--gutter); border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-size:13px; color:var(--faint)}
+  .foot a{color:var(--muted)} .foot a:hover{color:var(--text)}
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1)} .reveal.in{opacity:1; transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
 
-<body class="body_brd">
-	<header>
-		<!-- <video autoplay="true" muted loop="true" class="video_back">
-			<source src="public/assets/images/videoplayback3.mp4" type="video/mp4">
+<nav class="nav" id="nav">
+  <a class="brand" href="index.html">Yashna<span>.</span></a>
+  <div class="nav-right">
+    <a class="back" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg> All work</a>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle light and dark mode" title="Toggle light / dark"></button>
+  </div>
+</nav>
 
-		</video> -->
-		<nav class="navbar navbar-expand-sm bg-light fixed-top navbar_bg">
-			<!-- <div class="container-fluid navbar_pad"> -->
-			<div class="container">
-				<a class="navbar-brand navbar_logo" href="index.html">
-					<img src="public/assets/images/logo.png" alt="Logo" />
-				</a>
+<header class="cover">
+  <span class="cover-eyebrow">Internship · Summer 2024</span>
+  <h1 class="flipword" id="stratTitle">Stratagile</h1>
+  <span class="cover-sub">UX Design &amp; Business Analysis · Singapore</span>
+  <span class="cover-scroll">Scroll ↓</span>
+</header>
 
+<main>
+  <section class="intro wrap">
+    <span class="eyebrow reveal">The role</span>
+    <p class="lead reveal">During summer 2024 I joined Stratagile in Singapore as a Business Analyst intern with a strong focus on user experience, working across live client projects in a fast-paced, client-facing team.</p>
+    <div class="meta reveal"><div class="m"><span class="k">Timeline</span><span class="v">Aug – Sep 2024</span></div><div class="m"><span class="k">Role</span><span class="v">Business Analyst &amp; UX Design Intern</span></div><div class="m"><span class="k">Company</span><span class="v">Stratagile · Singapore</span></div><div class="m"><span class="k">Focus</span><span class="v">UX audits · User flows · Loyalty &amp; events</span></div></div>
+  </section>
 
+  <section class="about"><div class="wrap">
+    <div class="sec-head reveal"><h2>About Stratagile</h2></div>
+    <p class="prose reveal">Stratagile is a <b>data-driven growth enabler</b> with a global presence, specialising in digital marketing, platform development and business-enhancement solutions. Headquartered in the Asia-Pacific region, it operates across <b>14 cities</b> and works with major international brands.</p>
+    <div class="clab reveal">Selected clients</div>
+    <div class="chips reveal"><span>Standard Chartered</span><span>Canon</span><span>BMW</span><span>Levi's</span><span>Domino's Pizza</span><span>UOB</span></div>
+  </div></section>
 
-				<button class="navbar-toggler navbar_toggler_custom" type="button" data-bs-toggle="collapse"
-					data-bs-target="#collapsibleNavbar">
-					<span></span>
-					<span></span>
-				</button>
-				<div class="collapse navbar-collapse navbar_right" id="collapsibleNavbar">
-					<ul class="navbar-nav custom_navbar">
-						<li class="nav-item">
-							<a class="nav-link" href="index.html">Work</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="about.html">About</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="public/assets/images/cv.pdf" target="_blank">Contact</a>
-						</li>
-					</ul>
-				</div>
+  <section class="section"><div class="wrap">
+    <div class="sec-head reveal"><h2>What I worked on</h2></div>
+    <p class="prose reveal">Across the internship I contributed to real client work spanning UX research, service and journey design, and growth, presenting into strategic reviews alongside the wider team.</p>
+    <div class="ctribs">
+      <div class="cx reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.4-3.4"/><path d="M8.5 11h3M8.5 8.5h5"/></svg></span><div class="bd"><h4>UX audit for a high-traffic platform</h4><p>Ran a UX audit of a high-traffic media platform, pinpointing the key friction points and turning them into data-driven, actionable recommendations to reduce bounce rates and lift engagement. I presented the findings directly to clients in strategic review meetings.</p><div class="tg"><span>Bounce-rate optimisation</span><span>Client presentations</span></div></div></div><div class="cx reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 15.9 6.8 18.6l1-5.8L3.5 8.7l5.9-.9z"/></svg></span><div class="bd"><h4>Loyalty programme for a key client</h4><p>Partnered with cross-functional teams to build a loyalty programme for a key client, designing decks that showcased user-journey flows, performance analytics and pilot-test results, feeding directly into campaign initiatives and stakeholder presentations.</p><div class="tg"><span>User journeys</span><span>Pilot analytics</span></div></div></div><div class="cx reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M17 5a3 3 0 0 1 0 6M22 20a6 6 0 0 0-4-5.7"/></svg></span><div class="bd"><h4>Strategic partnerships across Singapore</h4><p>Helped facilitate strategic partnerships across Singapore to grow brand visibility and user acquisition for a client's remittance app, using targeted cultural-event promotions to boost engagement in local communities.</p><div class="tg"><span>Growth</span><span>Community events</span></div></div></div>
+      <div class="nda reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10V7a6 6 0 0 1 12 0v3"/><rect x="4" y="10" width="16" height="11" rx="2"/></svg> Under NDA, I can't share more detail here.</div>
+    </div>
+  </div></section>
 
-			</div>
-		</nav>
+  <section class="section"><div class="wrap">
+    <div class="sec-head reveal"><h2>My experience</h2></div>
+    <div class="quote reveal">Working with the Stratagile team gave me hands-on experience of collaboration in a fast-paced, client-facing environment. I gained confidence presenting ideas, contributing to real client work, and learning from talented professionals and mentors around me. I'm truly grateful for my time there, and for the supportive team that made the start of my internship journey feel so welcoming.</div>
+  </div></section>
+</main>
 
+<div class="foot"><span>© 2026 Yashna Arora</span><a href="index.html">Back to all work ↑</a></div>
 
-		<div class="container">
-			<div class="strat_bg">
-				<img src="public/assets/images/img-51.png" class="stat_logo" alt="" />
-			</div>
-		</div>
-
-
-
-	</header>
-
-
-	<section class="strat_section">
-		<div class="container container_custom">
-			<div class="stat_design">
-				<h4>INTERNSHIP</h4>
-				<h3>STRATAGILE | UX DESIGN</h3>
-				<h5>At- A- Glance</h5>
-				<p>
-					During the summer of 2024, I joined StratAgile Singapore as a Business Analyst intern, with a strong
-					focus on the user experience side of projects. StratAgile is a <span>data-driven growth
-						enabler</span> with a global presence, specialising in <span>digital marketing, platform
-						development, and business enhancement solutions.</span> It is headquartered in the Asia-Pacific
-					region and operates across 14 cities. They work with major clients including <span>Standard
-						Chartered, Canon, BMW, Levi’s, Domino’s Pizza, and UOB.</span>
-				</p>
-			</div>
-
-			<div class="row">
-				<div class="col-sm-3 col-6">
-					<div class="researc_footer">
-						<h4>TIMELINE</h4>
-						<ul>
-							<li>
-								<h6>August 2024 - Sept 2024</h6>
-							</li>
-
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-sm-3 col-6">
-					<div class="researc_footer">
-						<h4>ROLE</h4>
-						<ul>
-							<li>
-								<h6>Business Analyst intern</h6>
-							</li>
-							<li>
-								<h6>UX Design intern</h6>
-							</li>
-
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="mykey_section">
-		<div class="container container_custom">
-			<div class="mykey_content">
-				<h4>MY KEY CONTRIBUTIONS </h4>
-
-				<ul class="pain_card_list">
-					<li>
-						<h5>&#9679;</h5>
-					</li>
-					<li>
-						<h5>
-							<span>Conducted a  UX audit for a high-traffic media platform,</span> identifying key friction points and delivering data-driven, actionable recommendations to reduce bounce rates and improve user engagement. <span>Insights were presented directly to clients in strategic review meetings</span>.
-							</h5>
-					</li>
-				</ul>
-
-				<ul class="pain_card_list">
-					<li>
-						<h5>&#9679;</h5>
-					</li>
-					<li>
-						<h5>
-							<span>Partnered with cross-functional teams to develop a Loyalty Program for a key client,</span> designing impactful slide decks that showcased user journey flows, performance analytics, and pilot test results, contributing to key campaign initiatives and <span>stakeholder presentations.</span>
-							
-							
-							</h5>
-					</li>
-				</ul>
-
-				<ul class="pain_card_list">
-					<li>
-						<h5>&#9679;</h5>
-					</li>
-					<li>
-						<h5>
-							<span>Facilitated strategic partnerships across Singapore</span> to increase brand visibility and user acquisition for a client’s remittance app, leveraging <span>targeted cultural event promotions</span> to boost app engagement in local communities.
-							
-							
-					</li>
-				</ul>
-
-
-				<ul class="pain_card_list">
-					<li>
-						<h5 style="opacity: 0;">&#9679;</h5>
-					</li>
-					<li>
-						<h5>
-							Due to NDA, I can’t disclose more here! 
-							
-							
-					</li>
-				</ul>
-			</div>
-
-			<h4 class="experience_head">MY EXPERIENCE</h4>
-			<p class="exp_desc">Working with the StratAgile team gave me hands-on experience to collaboration in a
-				fast-paced,
-				client-facing environment. I gained confidence in presenting ideas, contributing to real client work,
-				and learning from talented professionals and mentors around me. I'm truly grateful for my time at
-				StratAgile and for the supportive, encouraging team that made the start of my internship journey and
-				experience feel extremely welcoming!</p>
-		</div>
-	</section>
-
-	<footer class="footer_bg">
-		<div class="container navbar_pad2">
-			<div class="footer_brd">
-				<div class="row">
-					<div class="col-sm-6">
-						<img src="public/assets/images/logo.png" class="logo_footer" alt="" />
-					</div>
-
-					<div class="col-sm-3 col-6">
-						<ul class="footer_list footer_list_mob">
-							<li>
-								<h6>
-									Work
-								</h6>
-							</li>
-							<li>
-								<a href="unlock.html">
-									Unlockr
-								</a>
-							</li>
-							<li>
-								<a href="work.html">
-									Who Am I?
-								</a>
-							</li>
-							<li>
-								<a href="stratagile.html" class="active">
-									StratAgile—Internship
-								</a>
-							</li>
-
-							<li>
-								<a href="wall.html">
-									Beyond the Screen - Design Sprint
-								</a>
-							</li>
-
-							<!-- <li>
-								<a href="playground.html">
-									Beyond the Briefs: Bits and Pieces
-								</a>
-							</li> -->
-							<li>
-								<a href="mining.html">
-									Mining Journal Redesign
-								</a>
-							</li>
-						</ul>
-					</div>
-
-					<div class="col-sm-3  col-6">
-						<ul class="footer_list">
-							<li>
-								<a target="_blank" href="https://dkscore.s3.ap-southeast-1.amazonaws.com/yashna/public/assets/images/cv.pdf">Contact</a>
-							</li>
-
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-
+<script>
+(function(){
+  var root=document.documentElement;
+  var sun='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  var moon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>';
+  function cur(){ return root.getAttribute('data-theme')||'dark'; }
+  var tb=document.getElementById('themeBtn'); function paint(){ tb.innerHTML=cur()==='dark'?sun:moon; }
+  root.setAttribute('data-theme',document.documentElement.getAttribute('data-theme')||'dark'); paint();
+  tb.addEventListener('click',function(){ root.setAttribute('data-theme',cur()==='dark'?'light':'dark'); paint(); });
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var fine=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var nav=document.getElementById('nav'), cover=document.querySelector('.cover');
+  function onScroll(){ var th=(cover?cover.offsetHeight:600)-70; nav.classList.toggle('scrolled', window.scrollY>th); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var title=document.getElementById('stratTitle');
+  if(title && fine && cover && !reduce){
+    cover.addEventListener('mousemove',function(e){ var r=title.getBoundingClientRect(); var px=(e.clientX-(r.left+r.width/2))/(r.width/2); var py=(e.clientY-(r.top+r.height/2))/(r.height/2); px=Math.max(-1,Math.min(1,px)); py=Math.max(-1,Math.min(1,py)); title.style.transform='rotateY('+(px*18).toFixed(1)+'deg) rotateX('+(-py*12).toFixed(1)+'deg)'; });
+    cover.addEventListener('mouseleave',function(){ title.style.transform=''; });
+  }
+  if(!reduce){ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el,i){ el.style.transitionDelay=(Math.min(i,6)*40)+'ms'; io.observe(el); });
+  } else { document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');}); }
+})();
+</script>
 </body>
-
 </html>

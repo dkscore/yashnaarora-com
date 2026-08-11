@@ -5,21 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yashna Arora · User Experience Designer</title>
 <meta name="description" content="UX and service design portfolio of Yashna Arora, final year BA (Hons) UX Design student at University of the Arts London and previously at HM Revenue &amp; Customs.">
-<meta name="author" content="Yashna Arora">
 <meta name="theme-color" content="#0A0A0C">
 <link rel="canonical" href="https://yashnaarora.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yashnaarora.com/">
 <meta property="og:title" content="Yashna Arora · User Experience Designer">
-<meta property="og:description" content="UX and service design portfolio. University of the Arts London, previously HM Revenue &amp; Customs.">
+<meta property="og:description" content="UX and service design portfolio.">
 <meta property="og:image" content="https://yashnaarora.com/public/assets/images/yashan.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Yashna Arora · User Experience Designer">
-<meta name="twitter:description" content="UX and service design portfolio. University of the Arts London, previously HM Revenue &amp; Customs.">
-<meta name="twitter:image" content="https://yashnaarora.com/public/assets/images/yashan.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%236D5AE6'/><text x='50' y='70' font-size='60' font-family='Georgia,serif' font-weight='700' fill='white' text-anchor='middle'>Y</text></svg>">
 </head>
 <body>
+<script>(function(){var r=document.documentElement;try{var t=localStorage.getItem('ya-theme');if(t)r.setAttribute('data-theme',t)}catch(e){}try{new MutationObserver(function(){try{localStorage.setItem('ya-theme',r.getAttribute('data-theme')||'dark')}catch(e){}}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
 <style>
   :root{
     --bg:#0A0A0C; --bg-elev:#141417; --bg-elev2:#1C1C21;
@@ -533,12 +530,12 @@ var VIZ_WALL='<div class="viz vwall"><span class="wd s" style="left:8.6%;top:17.
 var DATA = [
   { key:'work', label:'Work & Experience', items:[
     { n:'HM Revenue &amp; Customs', cat:'Industrial Placement', yr:'2025/26', sub:'Associate Service Designer · GOV.UK', viz:VIZ_HMRC, url:'hmrc.html', tags:['Service Design','Journey Mapping','Notification Strategy'] },
-    { n:'Stratagile', cat:'Internship', yr:'2024', sub:'Western Union · Loyalty & Subscription', viz:VIZ_STRAT, url:'https://claude.ai/code/artifact/06248640-c63a-4dca-82cb-fa4366c405bb', tags:['User Flows','Concept Decks','Mobile'] } ]},
+    { n:'Stratagile', cat:'Internship', yr:'2024', sub:'Western Union · Loyalty & Subscription', viz:VIZ_STRAT, url:'stratagile.html', tags:['User Flows','Concept Decks','Mobile'] } ]},
   { key:'studio', label:'Studio & Academic', items:[
     { n:'Unlockr · Digital Room Key', cat:'HCD Case Study · Interactive', yr:'2024', sub:'Student accommodation, London', viz:VIZ_UNLOCK, url:'https://claude.ai/code/artifact/b32ec9ee-5a16-4074-a4c3-24a978ce91d5', tags:['Human-Centred Design','Accessibility','UI'] },
     { n:'Science Museum London', cat:'Case Study', yr:'2024', sub:'Redesigning Exhibit Experience', viz:VIZ_SCIENCE, url:'https://claude.ai/code/artifact/76bad115-d22f-4402-8c22-076cf76f9192', tags:['Journey Mapping','Accessibility','Human Centred Design','UI'] },
     { n:'Mining Journal', cat:'UX Analysis', yr:'2023', sub:'Redesigning Subscription Plan', viz:VIZ_MINING, url:'https://claude.ai/code/artifact/558356f0-d204-4e97-8763-877a050c4c9a', tags:['UX Analysis','Responsive'] },
-    { n:'Beyond the Screen', cat:'Design Sprint', yr:'2025', sub:'Wall Installation · Digital Fabrication', viz:VIZ_WALL, url:'https://claude.ai/code/artifact/739cad5d-a22d-44f4-82d4-aeb5dd1f175c', tags:['Design-Build','Digital Fabrication','Grasshopper'] } ]}
+    { n:'3D Wall Installation', cat:'Design Sprint', yr:'2025', sub:'Wall Installation · Digital Fabrication', viz:VIZ_WALL, url:'https://claude.ai/code/artifact/739cad5d-a22d-44f4-82d4-aeb5dd1f175c', tags:['Design-Build','Digital Fabrication','Grasshopper'] } ]}
 ];
 
 (function(){
@@ -547,7 +544,7 @@ var DATA = [
   var moon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>';
   function curTheme(){ return root.getAttribute('data-theme')||'dark'; }
   var tb=document.getElementById('themeBtn'); function paintIcon(){ tb.innerHTML=curTheme()==='dark'?sun:moon; }
-  root.setAttribute('data-theme','dark'); paintIcon();
+  root.setAttribute('data-theme',document.documentElement.getAttribute('data-theme')||'dark'); paintIcon();
   tb.addEventListener('click',function(){ root.setAttribute('data-theme',curTheme()==='dark'?'light':'dark'); paintIcon(); });
   window.addEventListener('scroll',function(){ nav.classList.toggle('scrolled',window.scrollY>40); },{passive:true});
 

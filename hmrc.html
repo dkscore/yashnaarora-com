@@ -20,6 +20,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%236D5AE6'/><text x='50' y='70' font-size='60' font-family='Georgia,serif' font-weight='700' fill='white' text-anchor='middle'>Y</text></svg>">
 </head>
 <body>
+<script>(function(){var r=document.documentElement;try{var t=localStorage.getItem('ya-theme');if(t)r.setAttribute('data-theme',t)}catch(e){}try{new MutationObserver(function(){try{localStorage.setItem('ya-theme',r.getAttribute('data-theme')||'dark')}catch(e){}}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
 <style>
   :root{
     --dark:#0A0A0C; --dark2:#141417; --dark3:#1C1C21;
@@ -806,7 +807,7 @@
     var moon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>';
     function cur(){ return root.getAttribute('data-theme')||'dark'; }
     function paint(){ if(tb) tb.innerHTML = cur()==='dark'?sun:moon; }
-    root.setAttribute('data-theme','dark'); paint();
+    root.setAttribute('data-theme',document.documentElement.getAttribute('data-theme')||'dark'); paint();
     if(tb) tb.addEventListener('click',function(){ root.setAttribute('data-theme', cur()==='dark'?'light':'dark'); paint(); });
   })();
 
