@@ -54,6 +54,7 @@
   @keyframes bob{0%,100%{transform:translate(-50%,0)} 50%{transform:translate(-50%,7px)}}
   /* DARK body */
   .intro{padding:clamp(58px,9vh,104px) 0 0}
+  @media(max-width:1080px){.intro{padding-left:var(--gutter);padding-right:var(--gutter)}}
   .eyebrow{font-family:var(--mono); font-size:13px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--accent)}
   .intro .lead{font-size:clamp(18px,2.4vw,26px); font-weight:600; letter-spacing:-.02em; line-height:1.42; color:var(--text); margin:16px 0 0; max-width:64ch}
   .meta{display:flex; flex-wrap:wrap; gap:24px 44px; margin-top:38px; padding-top:26px; border-top:1px solid var(--line)}

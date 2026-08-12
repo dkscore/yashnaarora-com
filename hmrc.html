@@ -65,6 +65,7 @@
   /* detailed steps */
   .pstep{display:grid; grid-template-columns:auto 1fr; gap:24px; padding:32px 0; border-top:1px solid var(--line-d)}
   @media(max-width:600px){.pstep{grid-template-columns:1fr; gap:16px}}
+  .pstep .body{min-width:0}
   .pstep .ico{width:50px;height:50px;border-radius:15px;background:var(--pac-soft);color:var(--pac);display:grid;place-items:center;flex:none} .pstep .ico svg{width:23px;height:23px}
   .pstep .body .k{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--pac)}
   .pstep .body h3{font-size:clamp(21px,2.5vw,29px);font-weight:700;letter-spacing:-.025em;margin:8px 0 14px}
@@ -151,7 +152,7 @@
   .ov-grid{display:grid; grid-template-columns:1fr .9fr; gap:clamp(28px,5vw,60px); align-items:center}
   @media(max-width:860px){ .ov-grid{grid-template-columns:1fr; justify-items:center} .ov-prints{height:300px; width:100%; max-width:440px; margin-top:12px} }
   .ov-prints{position:relative; height:clamp(250px,28vw,330px)}
-  .oprint{position:absolute; top:50%; left:50%; opacity:0; will-change:transform,opacity; padding:8px; background:#fbfbf8; border-radius:5px; box-shadow:0 26px 50px rgba(0,0,0,.5), 0 5px 14px rgba(0,0,0,.42)}
+  .oprint{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); opacity:0; will-change:transform,opacity; padding:8px; background:#fbfbf8; border-radius:5px; box-shadow:0 26px 50px rgba(0,0,0,.5), 0 5px 14px rgba(0,0,0,.42)}
   .oprint .frame{position:relative; overflow:hidden; border-radius:2px; background:var(--dark3)}
   .oprint.land .frame{width:clamp(160px,19vw,222px); aspect-ratio:4/3}
   .oprint.port .frame{width:clamp(114px,13vw,152px); aspect-ratio:3/4}
@@ -162,6 +163,14 @@
 
   .scrollcue{position:absolute; bottom:20px; left:50%; transform:translateX(-50%); font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-mut); opacity:.7}
   @media(max-width:720px){ .bubble.opt{display:none} .field{height:74vh} }
+  @media(max-width:480px){
+    #b3{left:max(14%,84px)!important}
+    #b4{left:min(86%,calc(100% - 84px))!important}
+    #b7{left:22%!important}
+    #b8{left:78%!important}
+    .bin{padding:13px 15px; min-width:92px; gap:7px}
+    .bin .lb{font-size:13.5px}
+  }
 
   /* ===== DARK BODY ===== */
   .hero{padding:clamp(60px,10vh,120px) 0 60px; border-top:1px solid var(--line-d)}
@@ -198,6 +207,8 @@
   .wi-detail{animation:fadeUp .5s ease}
   @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   .back{display:inline-flex; align-items:center; gap:8px; background:none; border:1px solid var(--line-ds); color:var(--tlight); border-radius:999px; padding:9px 16px; font-size:13.5px; font-weight:500; cursor:pointer; font-family:var(--sans); margin-bottom:34px; transition:background .25s,color .25s} .back:hover{background:var(--tlight); color:var(--dark)} .back svg{width:15px;height:15px}
+  .nav .back{color:inherit; border:0; border-radius:0; padding:0; margin:0; background:none}
+  .nav .back:hover{background:none; color:inherit}
   .det-head .dn{font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent)}
   .det-head h2{font-size:clamp(28px,4.6vw,54px); font-weight:700; letter-spacing:-.04em; margin:12px 0 16px; text-wrap:balance}
   .det-head .intro{font-size:clamp(16px,1.9vw,21px); color:var(--tmuted); max-width:64ch; line-height:1.55; margin:0 0 44px} .det-head .intro b{color:var(--tlight); font-weight:500}
@@ -538,7 +549,7 @@
         #det03 .carr{flex:none;color:var(--tfaint);display:grid;place-items:center}
         #det03 .carr svg{width:16px;height:16px}
         #det03 .chain .cnote{font-size:13px;line-height:1.55;color:var(--tmuted);margin:16px 0 0;max-width:70ch}
-        @media(max-width:720px){ #det03 .role-tri,#det03 .tech{grid-template-columns:1fr} #det03 .cflow{flex-direction:column;align-items:stretch} #det03 .carr{transform:rotate(90deg)} }
+        @media(max-width:720px){ #det03 .role-tri,#det03 .tech{grid-template-columns:1fr} #det03 .cflow{flex-direction:column;align-items:stretch} #det03 .carr{transform:rotate(90deg)} #det03 .quotebig{flex:0 0 auto;min-width:0} }
       </style>
 
       <div class="brief">

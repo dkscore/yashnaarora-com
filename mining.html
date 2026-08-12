@@ -259,6 +259,17 @@
   .foot{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--faint)}.foot a{color:var(--muted)}.foot a:hover{color:var(--text)}
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}.reveal.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+  /* phone-width fixes: steppers scroll in place, rd column may shrink, callout texts clamp inside the viewport */
+  @media(max-width:560px){
+    .steps-wrap>div{min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:10px}
+    .stepper{min-width:460px}
+    .rd>div{min-width:0}
+    .ca .txt{width:auto;max-width:140px;font-size:9.5px;line-height:1.35;text-shadow:none;background:color-mix(in srgb,var(--bg) 84%,transparent);padding:3px 6px;border-radius:7px}
+    .ca-l .txt{left:0;right:auto;text-align:left}
+    .ca-r .txt{right:0;left:auto}
+    .uxframe .ca[style*="--i:1"] .txt{transform:translateY(calc(-100% + 2px))}
+    .uxframe .ca[style*="--i:4"] .txt{transform:translateY(-2px)}
+  }
 </style>
 <nav class="nav">
   <a class="brand" href="index.html">Yashna<span>.</span></a>
