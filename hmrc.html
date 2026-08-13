@@ -62,6 +62,19 @@
   .pov .p .num{width:54px;height:54px;border-radius:50%;background:var(--pac-soft);border:1px solid var(--pac);color:var(--pac);display:grid;place-items:center;font-size:20px;font-weight:700;margin-bottom:16px}
   .pov .p h4{font-size:16px;font-weight:600;letter-spacing:-.02em;margin:0 0 10px}
   .pov .p ul{list-style:none;margin:0;padding:0} .pov .p li{font-size:13px;color:var(--tmuted);margin-bottom:6px;line-height:1.4}
+  /* phones: compact process steps — number beside content instead of stacked full-width blocks */
+  @media(max-width:520px){
+    .pov{gap:16px}
+    .pov .p{display:grid;grid-template-columns:40px 1fr;column-gap:14px;align-items:start}
+    .pov .p .num{grid-row:1/span 2;width:36px;height:36px;font-size:15px;margin-bottom:0}
+    .pov .p h4{grid-column:2;margin:2px 0 6px;align-self:center}
+    .pov .p ul{grid-column:2}
+    .pov .p li{margin-bottom:4px}
+  }
+  @media(max-width:600px){
+    .pstep{grid-template-columns:50px 1fr;gap:14px;padding:24px 0}
+    .pstep .ico{width:40px;height:40px;border-radius:12px} .pstep .ico svg{width:19px;height:19px}
+  }
   /* detailed steps */
   .pstep{display:grid; grid-template-columns:auto 1fr; gap:24px; padding:32px 0; border-top:1px solid var(--line-d)}
   @media(max-width:600px){.pstep{grid-template-columns:1fr; gap:16px}}
