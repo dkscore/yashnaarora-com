@@ -302,6 +302,10 @@
 
   .reveal{opacity:0; transform:translateY(24px); transition:opacity .8s cubic-bezier(.2,.6,.2,1), transform .8s cubic-bezier(.2,.6,.2,1)} .reveal.in{opacity:1; transform:none}
   @media(prefers-reduced-motion:reduce){ *{animation:none!important} .device{transition-duration:.01ms!important} .bin{opacity:1!important; transform:none!important} .reveal{opacity:1!important; transform:none!important} }
+
+  .scrollhint{display:none;justify-content:flex-end;align-items:center;gap:6px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
+  .scrollhint::after{content:"\27F6";font-size:13px;animation:shx 1.4s ease-in-out infinite}
+  @keyframes shx{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
 </style>
 
 <nav class="nav" id="nav">
@@ -863,5 +867,14 @@
   document.querySelectorAll('a[href="#"]').forEach(function(a){ a.addEventListener('click',function(e){e.preventDefault();}); });
 })();
 </script>
+<script>(function(){
+  var sels=['.bp-scroll','.stagestrip'], hints=[];
+  sels.forEach(function(s){document.querySelectorAll(s).forEach(function(el){
+    var d=document.createElement('div'); d.className='scrollhint'; d.textContent='scroll';
+    el.parentNode.insertBefore(d,el); hints.push([d,el]);
+  });});
+  function upd(){hints.forEach(function(p){p[0].style.display=(p[1].scrollWidth>p[1].clientWidth+4)?'flex':'none';});}
+  addEventListener('resize',upd); document.addEventListener('click',function(){setTimeout(upd,450);}); setTimeout(upd,300);
+})();</script>
 </body>
 </html>

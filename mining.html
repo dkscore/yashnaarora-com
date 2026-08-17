@@ -217,7 +217,7 @@
   .uxframe.on .ca,.swapwrap.on .ca{opacity:1}
   .ca .ring{position:absolute;left:var(--ex);top:0;transform:translate(-50%,-50%);width:var(--rw);height:var(--rh);border:2px solid var(--pink);border-radius:50%;box-shadow:0 0 0 4px var(--pink-soft)}
   .ca .lead{position:absolute;top:0;width:var(--len);border-top:2px dotted var(--pink);height:0}
-  .ca .txt{position:absolute;top:0;width:var(--tw,158px);transform:translateY(-50%);color:var(--pink);font-size:12.5px;line-height:1.42;font-weight:600;text-shadow:0 1px 3px rgba(255,255,255,.55)}
+  .ca .txt{position:absolute;top:0;width:clamp(96px,13vw,158px);transform:translateY(-50%);color:var(--pink);font-size:12.5px;line-height:1.42;font-weight:600;text-shadow:0 1px 3px rgba(255,255,255,.55)}
   .ca-l .lead{right:calc(100% - var(--ex) + var(--rw)/2)}
   .ca-l .txt{right:calc(100% - var(--ex) + var(--rw)/2 + var(--len) + 9px);text-align:right}
   .ca-r .lead{left:calc(var(--ex) + var(--rw)/2)}
@@ -281,6 +281,12 @@
       background:none;border-radius:0;padding:0 0 0 14px;border-left:2.5px solid var(--pink);
       font-size:13.5px;line-height:1.5;text-shadow:none;margin-top:12px}
   }
+
+  .scrollhint{display:none;justify-content:flex-end;align-items:center;gap:6px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
+  .scrollhint::after{content:"\27F6";font-size:13px;animation:shx 1.4s ease-in-out infinite}
+  @keyframes shx{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+
+  @media(max-width:1120px){ #uxframe,.swapwrap{overflow-x:hidden} }
 </style>
 <nav class="nav">
   <a class="brand" href="index.html">Yashna<span>.</span></a>
@@ -508,5 +514,14 @@
   })();
 })();
 </script>
+<script>(function(){
+  var sels=['.ctable-wrap','.ia-wrap'], hints=[];
+  sels.forEach(function(s){document.querySelectorAll(s).forEach(function(el){
+    var d=document.createElement('div'); d.className='scrollhint'; d.textContent='scroll';
+    el.parentNode.insertBefore(d,el); hints.push([d,el]);
+  });});
+  function upd(){hints.forEach(function(p){p[0].style.display=(p[1].scrollWidth>p[1].clientWidth+4)?'flex':'none';});}
+  addEventListener('resize',upd); document.addEventListener('click',function(){setTimeout(upd,450);}); setTimeout(upd,300);
+})();</script>
 </body>
 </html>
