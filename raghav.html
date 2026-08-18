@@ -4,39 +4,36 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>RM · Command Desk</title>
+<title>Raghav Marwah</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230E1420'/><text x='50' y='66' font-size='44' font-family='monospace' font-weight='700' fill='%232EE6A8' text-anchor='middle'>RM</text></svg>">
 <script>(function(){var r=document.documentElement;try{var t=localStorage.getItem('rm-theme');r.setAttribute('data-theme',t||'dark')}catch(e){r.setAttribute('data-theme','dark')}})();</script>
 </head>
 <body>
 <style>
   :root{
-    --bg:#0A0E13; --bg2:#0F151C; --bg3:#161E27; --line:#1E2833; --line2:#2A3644;
-    --ink:#E9EEF3; --mut:#93A1B0; --faint:#5C6B7A;
-    --acc:#2EE6A8; --acc-dim:rgba(46,230,168,.13); --acc-ink:#06281C;
-    --amber:#F5B84D; --amber-dim:rgba(245,184,77,.13);
-    --red:#F26D6D; --red-dim:rgba(242,109,109,.12);
-    --blue:#5EA8FF; --blue-dim:rgba(94,168,255,.13);
-    --vio:#A78BFA; --vio-dim:rgba(167,139,250,.13);
-    --mono:"SF Mono",ui-monospace,"JetBrains Mono",Menlo,Consolas,monospace;
-    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",Arial,sans-serif;
-    --maxw:1180px; --pad:clamp(16px,3.5vw,40px); --r:14px;
+    --bg:#0A0A0C; --bg2:#121215; --bg3:#1A1A1F; --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.16);
+    --ink:#F5F5F7; --mut:#9A9AA2; --faint:#66666E;
+    --acc:#C7A567; --acc-dim:rgba(199,165,103,.13); --acc-ink:#171003;
+    --amber:#D98E45; --amber-dim:rgba(217,142,69,.13);
+    --red:#D96C6C; --red-dim:rgba(217,108,108,.12);
+    --blue:#8FA8C8; --blue-dim:rgba(143,168,200,.13);
+    --vio:#A99BC4; --vio-dim:rgba(169,155,196,.12);
+    --mono:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Helvetica Neue",Arial,sans-serif;
+    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Helvetica Neue",Arial,sans-serif;
+    --maxw:1150px; --pad:clamp(18px,4vw,44px); --r:16px;
   }
   :root[data-theme="light"]{
-    --bg:#F2F4F3; --bg2:#FBFCFB; --bg3:#E9EDEB; --line:#D8DEDA; --line2:#C3CCC6;
-    --ink:#121A16; --mut:#4E5B54; --faint:#8A968F;
-    --acc:#0B9C6B; --acc-dim:rgba(11,156,107,.1); --acc-ink:#fff;
-    --amber:#B07C14; --amber-dim:rgba(176,124,20,.12);
-    --red:#C24A4A; --red-dim:rgba(194,74,74,.1);
-    --blue:#2467C4; --blue-dim:rgba(36,103,196,.1);
-    --vio:#6D53D8; --vio-dim:rgba(109,83,216,.1);
+    --bg:#FAF9F7; --bg2:#FFFFFF; --bg3:#F1EFEA; --line:rgba(20,18,12,.09); --line2:rgba(20,18,12,.18);
+    --ink:#141210; --mut:#5B564C; --faint:#948D7F;
+    --acc:#8F6F32; --acc-dim:rgba(143,111,50,.1); --acc-ink:#fff;
+    --amber:#A9671E; --amber-dim:rgba(169,103,30,.12);
+    --red:#B5504F; --red-dim:rgba(181,80,79,.1);
+    --blue:#4A6B94; --blue-dim:rgba(74,107,148,.1);
+    --vio:#71618F; --vio-dim:rgba(113,97,143,.1);
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;letter-spacing:-.008em;transition:background .35s,color .35s}
-  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
-    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-    background-size:44px 44px;mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,black 0%,transparent 75%)}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;letter-spacing:-.012em;font-variant-numeric:tabular-nums;transition:background .35s,color .35s}
   a{color:var(--acc);text-decoration:none} a:hover{text-decoration:underline}
   button{font-family:inherit;cursor:pointer}
   ::selection{background:var(--acc);color:var(--acc-ink)}
@@ -44,14 +41,14 @@
   /* ===== top bar ===== */
   .bar{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:14px;padding:12px var(--pad);
     background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-  .logo{font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:.02em;color:var(--ink);white-space:nowrap}
+  .logo{font-weight:600;font-size:16px;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
   .logo b{color:var(--acc)}
   .tabs{display:flex;gap:4px;margin-left:8px}
-  .tab{background:none;border:1px solid transparent;color:var(--mut);font-size:13.5px;font-weight:600;padding:7px 13px;border-radius:9px;transition:.2s}
+  .tab{background:none;border:none;color:var(--mut);font-size:14px;font-weight:550;padding:9px 13px;border-radius:0;transition:.2s}
   .tab:hover{color:var(--ink)}
-  .tab.on{color:var(--acc);border-color:var(--line2);background:var(--bg2)}
+  .tab.on{color:var(--ink);border-color:transparent;background:none;box-shadow:inset 0 -2px 0 var(--acc)}
   .bar .right{margin-left:auto;display:flex;align-items:center;gap:12px}
-  .clock{font-family:var(--mono);font-size:13px;color:var(--mut);letter-spacing:.04em;white-space:nowrap}
+  .clock{font-size:13px;color:var(--mut);letter-spacing:.04em;white-space:nowrap}
   .clock b{color:var(--ink);font-weight:600}
   .tbtn{background:none;border:1px solid var(--line2);color:var(--mut);width:32px;height:32px;border-radius:9px;display:grid;place-items:center}
   .tbtn:hover{color:var(--acc);border-color:var(--acc)}
@@ -70,7 +67,7 @@
 
   .panel{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;transition:border-color .25s}
   .panel:hover{border-color:var(--line2)}
-  .ph{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 12px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .ph{font-size:11.5px;letter-spacing:.12em;font-weight:650;text-transform:uppercase;color:var(--faint);margin:0 0 12px;display:flex;justify-content:space-between;align-items:center;gap:10px}
   .ph .act{font-size:11px;letter-spacing:.05em;color:var(--acc);cursor:pointer;text-transform:none}
 
   /* ===== dashboard ===== */
@@ -78,67 +75,71 @@
   .greet{font-size:clamp(30px,5.4vw,52px);font-weight:750;letter-spacing:-.035em;margin:0;min-height:1.25em}
   .greet .cur{display:inline-block;width:.55ch;height:1em;background:var(--acc);vertical-align:-.12em;margin-left:2px;animation:blink 1s step-end infinite}
   @keyframes blink{50%{opacity:0}}
-  .sub{color:var(--mut);font-size:15px;margin:8px 0 0;font-family:var(--mono)}
+  .sub{color:var(--mut);font-size:15px;margin:10px 0 0}
   .sub b{color:var(--acc);font-weight:600}
   .dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 40px}
   @media(max-width:960px){.dgrid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:520px){.dgrid{grid-template-columns:1fr}}
   .stat{cursor:pointer}
-  .stat .big{font-family:var(--mono);font-size:30px;font-weight:700;letter-spacing:-.02em;margin:2px 0 1px}
+  .stat .big{font-size:32px;font-weight:700;letter-spacing:-.02em;margin:2px 0 1px}
   .stat .big.g{color:var(--acc)} .stat .big.a{color:var(--amber)} .stat .big.b{color:var(--blue)} .stat .big.v{color:var(--vio)}
   .stat p{margin:0;color:var(--mut);font-size:13px}
-  .stat .hint{font-size:11.5px;color:var(--faint);margin-top:8px;font-family:var(--mono)}
+  .stat .hint{font-size:12px;color:var(--faint);margin-top:8px}
 
   /* ===== pills ===== */
-  .pill{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:6px;white-space:nowrap}
-  .p-open{background:var(--acc);color:var(--acc-ink)}
-  .p-closing{background:var(--amber);color:#221503}
-  .p-soon{background:var(--amber-dim);color:var(--amber);border:1px solid var(--amber)}
-  .p-later{background:var(--blue-dim);color:var(--blue)}
-  .p-rolling{background:var(--bg3);color:var(--ink)}
-  .p-check{background:var(--bg3);color:var(--faint)}
-  .p-inel{background:var(--red-dim);color:var(--red)}
-  .p-elig{background:var(--acc-dim);color:var(--acc)}
-
+  .pill{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+  .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+  .p-open{color:#3FBF8F} :root[data-theme="light"] .p-open{color:#177B55}
+  .p-closing{color:var(--amber)}
+  .p-soon{color:var(--amber)} .p-soon::before{background:transparent;border:1.5px solid currentColor}
+  .p-later{color:var(--blue)} .p-rolling{color:var(--mut)} .p-check{color:var(--faint)} .p-check::before{background:transparent;border:1.5px solid currentColor}
+  .p-inel{color:var(--red)} .p-elig{color:#3FBF8F} :root[data-theme="light"] .p-elig{color:#177B55}
+  .p-inel::before,.p-elig::before{display:none}
   /* ===== jobs ===== */
   .sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:34px 0 12px;flex-wrap:wrap}
   .sec-h h2{font-size:clamp(19px,2.6vw,25px);font-weight:720;letter-spacing:-.02em;margin:0}
-  .sec-h .cnt{color:var(--faint);font-size:12.5px;font-family:var(--mono)}
+  .sec-h .cnt{color:var(--faint);font-size:12.5px}
   .grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:12px;margin-top:18px}
   @media(max-width:900px){.grid2{grid-template-columns:1fr}}
   .tl .seg{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:9px 0;border-top:1px dashed var(--line);font-size:13.5px}
   .tl .seg:first-of-type{border-top:none}
-  .tl .when{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--acc);padding-top:2px}
+  .tl .when{font-size:12.5px;font-weight:700;color:var(--acc);padding-top:2px}
   .tl small{display:block;color:var(--mut)}
   .dec .row{display:grid;grid-template-columns:24px 1fr;gap:9px;font-size:13px;padding:7px 9px;border-radius:9px;background:var(--bg3);margin-bottom:7px;align-items:start}
-  .dec .v{font-family:var(--mono);font-weight:800;text-align:center}
+  .dec .v{font-weight:800;text-align:center}
   .dec .v.g{color:var(--acc)} .dec .v.y{color:var(--amber)} .dec .v.r{color:var(--red)}
-  .note{font-size:12px;color:var(--faint);font-family:var(--mono);margin:14px 0 0;line-height:1.6}
+  .note{font-size:12.5px;color:var(--faint);margin:14px 0 0;line-height:1.6}
 
   .filters{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
   .filters select,.filters input{background:var(--bg2);border:1px solid var(--line2);color:var(--ink);border-radius:9px;padding:8px 11px;font-size:13px;font-family:var(--sans)}
   .filters input{flex:1;min-width:150px}
   .board{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
   .job{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px;display:flex;flex-direction:column;gap:9px;transition:border-color .2s,transform .2s}
-  .job:hover{border-color:var(--acc);transform:translateY(-2px)}
+  .job:hover{border-color:var(--line2);transform:translateY(-2px)}
   .job .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
   .job .co{font-weight:700;font-size:15px}
   .job .pr{color:var(--mut);font-size:12.5px;margin-top:1px}
   .job .meta{display:flex;flex-wrap:wrap;gap:5px}
-  .job .meta span{background:var(--bg3);border-radius:6px;padding:2px 7px;font-size:10.5px;color:var(--mut);font-family:var(--mono)}
-  .job .ev{font-size:11.5px;color:var(--faint);line-height:1.5}
+  .job .meta span{background:var(--bg3);border-radius:999px;padding:3px 10px;font-size:11px;color:var(--mut)}
+  .job .ev{font-size:12px;color:var(--faint);line-height:1.55}
+  .job details{font-size:12px;color:var(--faint)}
+  .job details summary{cursor:pointer;color:var(--mut);font-weight:600;font-size:12px;list-style:none}
+  .job details summary::after{content:" ↓"} .job details[open] summary::after{content:" ↑"}
+  .job details p{margin:8px 0 0;line-height:1.6}
+  .job.applied{opacity:.55}
+  .job .ap.on{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
   .job .foot{display:flex;justify-content:space-between;align-items:center;margin-top:2px;gap:8px}
   .mini{border:1px solid var(--line2);background:none;color:var(--ink);border-radius:8px;padding:6px 11px;font-size:12px;font-weight:600}
   .mini:hover{border-color:var(--acc);color:var(--acc)}
   .mini.primary{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
   .mini.primary:hover{color:var(--acc-ink);filter:brightness(1.08)}
-  .dl{font-family:var(--mono);font-size:11px;color:var(--amber)}
+  .dl{font-size:11.5px;color:var(--amber);font-weight:650}
 
   .watch .wrow{display:grid;grid-template-columns:1fr auto auto auto;gap:8px;align-items:center;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
   .watch .wrow:first-of-type{border-top:none}
   .watch .nm b{display:block}
-  .watch .nm small{color:var(--faint);font-family:var(--mono);font-size:11px}
-  .chk-done{color:var(--acc);font-family:var(--mono);font-size:11px}
+  .watch .nm small{color:var(--faint);font-size:11.5px}
+  .chk-done{color:var(--acc);font-size:11.5px;font-weight:650}
   .addrow{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
   .addrow input{flex:1;min-width:120px;background:var(--bg3);border:1px solid var(--line2);color:var(--ink);border-radius:8px;padding:8px 10px;font-size:13px}
   .del{background:none;border:none;color:var(--faint);font-size:15px} .del:hover{color:var(--red)}
@@ -148,14 +149,16 @@
   .chip{border:1px solid var(--line2);background:none;color:var(--mut);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;transition:.15s}
   .chip.on{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
   .fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:14px}
-  .rec{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px;transition:border-color .2s,transform .2s}
-  .rec:hover{border-color:var(--acc);transform:translateY(-2px)}
+  .rec{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:0 0 16px;display:flex;flex-direction:column;gap:8px;overflow:hidden;transition:border-color .2s,transform .2s}
+  .rec img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:var(--bg3)}
+  .rec>*:not(img){margin-left:16px;margin-right:16px}
+  .rec:hover{border-color:var(--line2);transform:translateY(-3px)}
   .rec h4{margin:0;font-size:15.5px;font-weight:700}
-  .macros{display:flex;gap:6px;font-family:var(--mono);font-size:11px}
+  .macros{display:flex;gap:6px;font-size:11.5px;flex-wrap:wrap}
   .macros span{background:var(--bg3);padding:3px 8px;border-radius:6px;color:var(--mut)}
   .macros .pro{color:var(--acc);font-weight:700}
   .rec .tags{display:flex;gap:5px;flex-wrap:wrap}
-  .rec .tags i{font-style:normal;font-size:10.5px;color:var(--faint);font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em}
+  .rec .tags i{font-style:normal;font-size:11px;color:var(--faint);letter-spacing:.03em}
   .rec p{margin:0;font-size:12.5px;color:var(--mut);line-height:1.55}
   .rec .steps{display:none;font-size:12.5px;color:var(--mut);margin:0;padding-left:16px}
   .rec.open .steps{display:block}
@@ -167,10 +170,10 @@
   .pgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:12px;margin-top:18px}
   @media(max-width:900px){.pgrid{grid-template-columns:1fr}}
   .cal-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-  .cal-h b{font-family:var(--mono);font-size:14px}
+  .cal-h b{font-size:14.5px;font-weight:650}
   .cal-h button{background:none;border:1px solid var(--line2);color:var(--mut);border-radius:8px;width:28px;height:28px}
   .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
-  .cal .dow{font-family:var(--mono);font-size:10px;color:var(--faint);text-align:center;padding:4px 0;text-transform:uppercase}
+  .cal .dow{font-size:10.5px;color:var(--faint);text-align:center;padding:4px 0;text-transform:uppercase}
   .cal .day{aspect-ratio:1;border:1px solid transparent;border-radius:9px;background:none;color:var(--ink);font-size:12.5px;position:relative;display:grid;place-items:center}
   .cal .day:hover{border-color:var(--line2)}
   .cal .day.dim{color:var(--faint)}
@@ -182,7 +185,7 @@
   .evt{display:grid;grid-template-columns:6px 1fr auto auto;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line);font-size:13.5px}
   .evt:first-of-type{border-top:none}
   .evt .cbar{width:6px;height:26px;border-radius:3px}
-  .evt small{color:var(--faint);font-family:var(--mono);font-size:11px}
+  .evt small{color:var(--faint);font-size:11.5px}
   .evt-add{display:grid;grid-template-columns:1fr 108px 84px 110px auto;gap:7px;margin-top:12px}
   @media(max-width:640px){.evt-add{grid-template-columns:1fr 1fr;}.evt-add input[type=text]{grid-column:1/3}}
   .evt-add input,.evt-add select{background:var(--bg3);border:1px solid var(--line2);color:var(--ink);border-radius:8px;padding:8px 9px;font-size:12.5px;color-scheme:dark}
@@ -197,15 +200,15 @@
   .note-card:hover{transform:translateY(-2px)}
   .note-card input[type=checkbox]{accent-color:var(--acc);margin-top:3px}
   .note-card .txt{flex:1;font-size:13.5px}
-  .note-card .txt small{display:block;color:var(--faint);font-family:var(--mono);font-size:10.5px;margin-top:3px}
+  .note-card .txt small{display:block;color:var(--faint);font-size:11px;margin-top:3px}
   .note-card.done .txt{color:var(--faint);text-decoration:line-through}
   .due-today{color:var(--amber)!important;font-weight:700}
-  .empty{color:var(--faint);font-size:13px;padding:12px 0;font-family:var(--mono)}
-  .foot-note{margin:44px 0 40px;font-size:11.5px;color:var(--faint);font-family:var(--mono);line-height:1.7}
+  .empty{color:var(--faint);font-size:13px;padding:12px 0}
+  .foot-note{margin:48px 0 40px;font-size:12px;color:var(--faint);line-height:1.7}
 </style>
 
 <div class="bar">
-  <span class="logo"><b>RM</b>://command-desk</span>
+  <span class="logo">Raghav <b>Marwah</b></span>
   <nav class="tabs">
     <button class="tab on" data-v="home">Desk</button>
     <button class="tab" data-v="jobs">Jobs</button>
@@ -275,7 +278,7 @@
     <div class="sec-h"><h2>London board</h2><span class="cnt" id="boardCount"></span></div>
     <div class="filters">
       <input id="fSearch" type="search" placeholder="Search company or programme…">
-      <select id="fStatus"><option value="">All statuses</option><option value="open">● Open now</option><option value="closing">◉ Closing soon</option><option value="soon">◐ Opening soon</option><option value="rolling">↻ Rolling</option><option value="later">◷ Later</option><option value="check">? Watch</option></select>
+      <select id="fStatus"><option value="">All statuses</option><option value="open">● Open now</option><option value="closing">◉ Closing soon</option><option value="soon">◐ Opening soon</option><option value="rolling">↻ Rolling</option><option value="later">◷ Later</option><option value="check">? Watch</option><option value="applied">✓ Applied</option></select>
       <select id="fKind"><option value="">All types</option><option>graduate</option><option>off-cycle</option><option>internship</option><option>placement</option><option>entry</option></select>
       <select id="fCat"><option value="">All categories</option></select>
       <select id="fElig"><option value="">Any eligibility</option><option value="eligible">Final-year eligible</option></select>
@@ -352,7 +355,7 @@
     </div>
   </section>
 
-  <p class="foot-note">RM://command-desk · built for Raghav Marwah · everything you type stays in this browser (localStorage) · job board verified by hand on the date shown in Jobs · London time throughout</p>
+  <p class="foot-note">Raghav Marwah · private dashboard · everything you type stays in this browser (localStorage) · job board verified by hand on the date shown in Jobs · London time throughout</p>
 </div>
 
 <script>
@@ -414,26 +417,34 @@ function renderBoard(){
   const q=inQ.value.toLowerCase();
   const rows=DATA.filter(d=>
     (!q||(d.company+' '+d.programme).toLowerCase().includes(q))
-    &&(!selS.value||d.status===selS.value)
+    &&(!selS.value||(selS.value==='applied'?applied.has(key(d)):d.status===selS.value))
     &&(!selK.value||d.kind===selK.value)
     &&(!selC.value||d.categories.some(c=>catGroup(c)===selC.value))
     &&(!selE.value||d.eligibility===selE.value));
-  rows.sort((a,b)=>(STORD[a.status]??9)-(STORD[b.status]??9)||(a.eligibility==='eligible'?-1:1)-(b.eligibility==='eligible'?-1:1)||a.company.localeCompare(b.company));
-  $('#boardCount').textContent=rows.length+' / '+DATA.length+' programmes · London only';
+  rows.sort((a,b)=>(applied.has(key(a))-applied.has(key(b)))||(STORD[a.status]??9)-(STORD[b.status]??9)||(a.eligibility==='eligible'?-1:1)-(b.eligibility==='eligible'?-1:1)||a.company.localeCompare(b.company));
+  $('#boardCount').textContent=rows.length+' of '+DATA.length+' · London only · '+applied.size+' applied';
   $('#board').innerHTML=rows.map(d=>{
-    const elig=d.eligibility==='eligible'?'<span class="pill p-elig">final-year ✓</span>':d.eligibility==='ineligible-final-year'?'<span class="pill p-inel">penultimate only</span>':'<span class="pill p-check">check eligibility</span>';
-    return `<div class="job">
+    const k=key(d), isAp=applied.has(k);
+    const elig=d.eligibility==='eligible'?'<span class="pill p-elig">✓ final-year</span>':d.eligibility==='ineligible-final-year'?'<span class="pill p-inel">✕ penultimate only</span>':'<span class="pill p-check">check eligibility</span>';
+    return `<div class="job ${isAp?'applied':''}">
       <div class="top"><div><div class="co">${esc(d.company)}</div><div class="pr">${esc(d.programme)}</div></div>
         <span class="pill p-${d.status}">${STLBL[d.status]}</span></div>
-      <div class="meta">${elig}${[...new Set(d.categories.map(catGroup))].slice(0,3).map(c=>'<span>'+esc(c)+'</span>').join('')}<span>${esc(d.kind)}</span></div>
-      <div class="ev">${esc(d.statusNote)}${d.deadline?` · <span class="dl">deadline ${esc(d.deadline)}</span>`:''}</div>
-      <div class="ev">${esc(d.evidence)}</div>
-      <div class="foot"><span class="ev" style="font-family:var(--mono)">${esc(d.sponsorship==='yes'?'sponsors visas':d.sponsorship==='no'?'no sponsorship':d.sponsorship==='case-by-case'?'sponsorship case-by-case':'sponsorship: '+d.sponsorship)}</span>
+      <div class="meta">${elig}${d.deadline?`<span class="dl">deadline ${esc(d.deadline)}</span>`:''}<span>${esc(d.kind)}</span></div>
+      <details><summary>details</summary>
+        <p>${esc(d.statusNote)}</p>
+        <p>${esc(d.evidence)}</p>
+        <p>${esc(d.sponsorship==='yes'?'Sponsors visas.':d.sponsorship==='no'?'No sponsorship.':'Sponsorship: '+d.sponsorship+'.')} ${esc(d.sponsorNotes)}</p>
+      </details>
+      <div class="foot">
+        <button class="mini ap ${isAp?'on':''}" onclick="toggleApplied('${k.replace(/'/g,String.fromCharCode(92,39))}')">${isAp?'Applied ✓':'Mark applied'}</button>
         <div style="display:flex;gap:7px"><a class="mini" target="_blank" rel="noopener" href="${esc(d.careersUrl)}">Careers ↗</a>
-        <button class="mini primary" onclick="watchAdd('${esc(d.company).replace(/'/g,"\\'")}','${esc(d.careersUrl).replace(/'/g,"\\'")}')">Watch</button></div></div>
+        <button class="mini" onclick="watchAdd('${esc(d.company).replace(/'/g,String.fromCharCode(92,39))}','${esc(d.careersUrl).replace(/'/g,String.fromCharCode(92,39))}')">Watch</button></div></div>
     </div>`;}).join('')||'<div class="empty">Nothing matches. Loosen the filters.</div>';
   updStats();
 }
+function key(d){return d.company+'|'+d.programme.slice(0,40);}
+let applied=new Set(store.get('applied',[]));
+function toggleApplied(k){applied.has(k)?applied.delete(k):applied.add(k);store.set('applied',[...applied]);renderBoard();}
 [inQ,selS,selK,selC,selE].forEach(el=>el.addEventListener('input',renderBoard));
 
 /* watchlist */
@@ -459,7 +470,7 @@ $('#notifBtn').onclick=async()=>{
   if(!('Notification' in window)){alert('This browser does not support notifications.');return;}
   const p=await Notification.requestPermission();
   $('#notifBtn').textContent=p==='granted'?'Reminders on ✓':'Enable reminders';
-  if(p==='granted') new Notification('RM://command-desk',{body:'Reminders on. I’ll nudge you about the watchlist and due tasks while a tab is open.'});
+  if(p==='granted') new Notification('Raghav Marwah',{body:'Reminders on. I’ll nudge you about the watchlist and due tasks while a tab is open.'});
 };
 if(('Notification' in window)&&Notification.permission==='granted')$('#notifBtn').textContent='Reminders on ✓';
 setInterval(()=>{ // hourly-ish watch nudge at 9am London + due tasks
@@ -475,31 +486,31 @@ setInterval(()=>{ // hourly-ish watch nudge at 9am London + due tasks
 
 /* ================= FOOD ================= */
 const RECIPES=[
- {n:'Chicken shawarma bowl',pro:'chicken',meal:'dinner',t:25,kcal:620,p:52,tags:['high-protein','meal-prep'],d:'Yogurt-marinated thighs, cumin rice, cucumber, garlic sauce.',s:['Marinate thighs in yogurt, garlic, cumin, paprika (10 min min).','Sear 4 min a side until charred.','Serve over rice with cucumber, red onion, garlic-yogurt sauce.']},
- {n:'5-min egg wrap',pro:'eggs',meal:'breakfast',t:5,kcal:380,p:28,tags:['quick','pre-uni'],d:'3-egg omelette rolled in a tortilla with hot sauce.',s:['Whisk 3 eggs, pour into hot pan in a thin layer.','Lay tortilla on top while egg is wet; flip after 1 min.','Roll with spinach, cheese, hot sauce.']},
- {n:'Steak & potato traybake',pro:'beef',meal:'dinner',t:35,kcal:710,p:48,tags:['bulk','weekend'],d:'Sirloin, crispy cubed potatoes, chimichurri.',s:['Roast cubed potatoes at 220°C for 25 min.','Sear sirloin 3 min a side, rest 5.','Blitz parsley, garlic, vinegar, olive oil. Slice, pour over.']},
- {n:'Salmon rice bowl',pro:'fish',meal:'lunch',t:15,kcal:560,p:41,tags:['omega-3','quick'],d:'Flaked hot salmon, sushi rice, sriracha mayo, cucumber.',s:['Air-fry salmon 8 min at 200°C with soy + honey.','Flake over warm rice.','Top with cucumber, sriracha mayo, sesame.']},
- {n:'Greek yogurt power bowl',pro:'yogurt',meal:'breakfast',t:5,kcal:420,p:38,tags:['no-cook','quick'],d:'Thick yogurt, whey, berries, granola crunch.',s:['Stir half a scoop of whey into 250g Greek yogurt.','Top with berries, granola, honey.']},
- {n:'Chicken katsu curry',pro:'chicken',meal:'dinner',t:40,kcal:780,p:55,tags:['bulk','weekend'],d:'Panko chicken, Japanese curry sauce, sticky rice.',s:['Panko-crumb chicken breast; bake or air-fry 18 min.','Simmer curry roux with onion + carrot.','Slice over rice, pour sauce.']},
- {n:'Tuna sweetcorn melts',pro:'fish',meal:'lunch',t:12,kcal:450,p:39,tags:['cheap','quick'],d:'Tuna, yogurt, sweetcorn on toasted muffins, grilled cheddar.',s:['Mix tuna, Greek yogurt, sweetcorn, black pepper.','Pile onto muffin halves, top with cheddar.','Grill 3–4 min until bubbling.']},
- {n:'Beef burrito bowls',pro:'beef',meal:'dinner',t:20,kcal:640,p:46,tags:['meal-prep','high-protein'],d:'5% mince, taco spice, rice, beans, salsa, lime.',s:['Brown 5% mince with taco seasoning.','Layer over rice with black beans.','Top with salsa, yogurt, lime, coriander.']},
- {n:'Protein overnight oats',pro:'yogurt',meal:'breakfast',t:5,kcal:440,p:34,tags:['no-cook','meal-prep'],d:'Oats, whey, chia, milk — grab-and-go from the fridge.',s:['Mix 60g oats, 1 scoop whey, 1 tbsp chia, 200ml milk.','Fridge overnight. Top with banana.']},
- {n:'Paneer tikka skewers',pro:'paneer',meal:'dinner',t:25,kcal:520,p:32,tags:['veg','grill'],d:'Charred spiced paneer, peppers, mint yogurt dip.',s:['Marinate paneer cubes in yogurt + tikka paste 15 min.','Skewer with peppers and onion; grill 10–12 min.','Serve with mint yogurt.']},
- {n:'Chicken caesar wrap',pro:'chicken',meal:'lunch',t:15,kcal:540,p:44,tags:['quick','classic'],d:'Grilled breast, crisp romaine, parmesan, light caesar.',s:['Season and grill sliced breast 6–7 min.','Toss romaine with light caesar + parmesan.','Wrap tight, halve.']},
- {n:'Egg fried rice + prawns',pro:'eggs',meal:'dinner',t:15,kcal:580,p:38,tags:['leftover-rice','quick'],d:'Day-old rice, 3 eggs, prawns, soy, spring onion.',s:['Scramble eggs, set aside.','Fry prawns with garlic; add cold rice on high heat.','Soy, sesame, eggs back in, spring onion.']},
- {n:'Cottage cheese toast',pro:'yogurt',meal:'snack',t:5,kcal:280,p:24,tags:['no-cook','quick'],d:'Sourdough, whipped cottage cheese, chilli honey.',s:['Toast sourdough.','Spread cottage cheese thick.','Drizzle chilli honey, flaky salt.']},
- {n:'Turkey chilli',pro:'chicken',meal:'dinner',t:45,kcal:510,p:47,tags:['meal-prep','cut'],d:'Lean turkey mince, beans, smoky tomato base. Freezes well.',s:['Brown turkey mince with onion + garlic.','Add chopped tomatoes, kidney beans, cumin, smoked paprika.','Simmer 30 min. Rice or jacket potato.']},
- {n:'Tofu peanut stir-fry',pro:'tofu',meal:'dinner',t:20,kcal:530,p:30,tags:['veg','quick'],d:'Crispy tofu, greens, peanut-soy sauce, noodles.',s:['Press + cube tofu, cornflour dust, fry until crisp.','Stir-fry broccoli + peppers.','Peanut butter, soy, lime, chilli — toss with noodles.']},
- {n:'Smoked salmon bagel',pro:'fish',meal:'breakfast',t:8,kcal:470,p:31,tags:['weekend','quick'],d:'Toasted bagel, cream cheese, smoked salmon, dill.',s:['Toast bagel.','Cream cheese, salmon, capers, dill, lemon.']},
- {n:'Chicken fajita traybake',pro:'chicken',meal:'dinner',t:30,kcal:590,p:49,tags:['meal-prep','one-tray'],d:'Everything on one tray: chicken, peppers, fajita spice.',s:['Toss sliced breast, peppers, onion in fajita spice + oil.','Roast 22 min at 210°C.','Serve with tortillas + yogurt.']},
- {n:'Beef & broccoli',pro:'beef',meal:'dinner',t:20,kcal:560,p:45,tags:['high-protein','quick'],d:'Flank steak strips, glossy soy-garlic sauce, jasmine rice.',s:['Sear thin beef strips hard, remove.','Steam-fry broccoli; add soy, garlic, honey, cornflour slurry.','Beef back in, serve on rice.']},
- {n:'Protein pancakes',pro:'eggs',meal:'breakfast',t:12,kcal:430,p:35,tags:['weekend'],d:'Banana, eggs, oats, whey — blender pancakes.',s:['Blend 1 banana, 2 eggs, 40g oats, ½ scoop whey.','Fry small pancakes 2 min a side.','Greek yogurt + berries on top.']},
- {n:'Tandoori fish + rice',pro:'fish',meal:'dinner',t:25,kcal:540,p:42,tags:['cut','high-protein'],d:'Tandoori-spiced cod, cumin rice, kachumber salad.',s:['Coat cod in yogurt + tandoori paste, bake 12 min at 200°C.','Cumin rice; chop cucumber-tomato-onion salad.','Lemon over everything.']},
- {n:'Halloumi egg muffins',pro:'eggs',meal:'snack',t:25,kcal:310,p:26,tags:['meal-prep','veg'],d:'Baked egg muffins with halloumi + spinach. Fridge for 4 days.',s:['Whisk 6 eggs; fold in cubed halloumi + spinach.','Pour into muffin tin.','Bake 18 min at 180°C.']},
- {n:'Chicken pesto pasta',pro:'chicken',meal:'lunch',t:20,kcal:650,p:50,tags:['bulk','meal-prep'],d:'Pasta, grilled chicken, pesto, cherry tomatoes, parmesan.',s:['Boil pasta; grill sliced chicken.','Toss with pesto + splash of pasta water.','Tomatoes + parmesan through.']},
- {n:'Steak sandwich',pro:'beef',meal:'lunch',t:15,kcal:620,p:44,tags:['weekend'],d:'Minute steak, caramelised onions, rocket, ciabatta.',s:['Sear minute steak 90 sec a side, rest.','Soften onions with balsamic.','Build on toasted ciabatta with rocket + mustard mayo.']},
- {n:'Miso salmon noodles',pro:'fish',meal:'dinner',t:18,kcal:600,p:40,tags:['quick','high-protein'],d:'Miso-glazed salmon, udon, pak choi, sesame.',s:['Glaze salmon with miso + honey; grill 8 min.','Udon + pak choi in the same pan.','Sesame + spring onion.']},
- {n:'Tofu scramble',pro:'tofu',meal:'breakfast',t:10,kcal:340,p:26,tags:['veg','quick'],d:'Turmeric tofu scramble, toast, avocado.',s:['Crumble firm tofu into pan with turmeric + garlic powder.','2 min on high; splash of soy.','Toast + avocado.']},
+ {n:'Chicken shawarma bowl',img:'1546069901-ba9599a7e63c',url:'https://www.recipetineats.com/chicken-sharwama-middle-eastern/',pro:'chicken',meal:'dinner',t:25,kcal:620,p:52,tags:['high-protein','meal-prep'],d:'Yogurt-marinated thighs, cumin rice, cucumber, garlic sauce.',s:['Marinate thighs in yogurt, garlic, cumin, paprika (10 min min).','Sear 4 min a side until charred.','Serve over rice with cucumber, red onion, garlic-yogurt sauce.']},
+ {n:'5-min egg wrap',img:'1482049016688-2d3e1b311543',pro:'eggs',meal:'breakfast',t:5,kcal:380,p:28,tags:['quick','pre-uni'],d:'3-egg omelette rolled in a tortilla with hot sauce.',s:['Whisk 3 eggs, pour into hot pan in a thin layer.','Lay tortilla on top while egg is wet; flip after 1 min.','Roll with spinach, cheese, hot sauce.']},
+ {n:'Steak & potato traybake',img:'1432139555190-58524dae6a55',pro:'beef',meal:'dinner',t:35,kcal:710,p:48,tags:['bulk','weekend'],d:'Sirloin, crispy cubed potatoes, chimichurri.',s:['Roast cubed potatoes at 220°C for 25 min.','Sear sirloin 3 min a side, rest 5.','Blitz parsley, garlic, vinegar, olive oil. Slice, pour over.']},
+ {n:'Salmon rice bowl',img:'1467003909585-2f8a72700288',pro:'fish',meal:'lunch',t:15,kcal:560,p:41,tags:['omega-3','quick'],d:'Flaked hot salmon, sushi rice, sriracha mayo, cucumber.',s:['Air-fry salmon 8 min at 200°C with soy + honey.','Flake over warm rice.','Top with cucumber, sriracha mayo, sesame.']},
+ {n:'Greek yogurt power bowl',img:'1488477181946-6428a0291777',pro:'yogurt',meal:'breakfast',t:5,kcal:420,p:38,tags:['no-cook','quick'],d:'Thick yogurt, whey, berries, granola crunch.',s:['Stir half a scoop of whey into 250g Greek yogurt.','Top with berries, granola, honey.']},
+ {n:'Chicken katsu curry',img:'1569718212165-3a8278d5f624',pro:'chicken',meal:'dinner',t:40,kcal:780,p:55,tags:['bulk','weekend'],d:'Panko chicken, Japanese curry sauce, sticky rice.',s:['Panko-crumb chicken breast; bake or air-fry 18 min.','Simmer curry roux with onion + carrot.','Slice over rice, pour sauce.']},
+ {n:'Tuna sweetcorn melts',img:'1490645935967-10de6ba17061',pro:'fish',meal:'lunch',t:12,kcal:450,p:39,tags:['cheap','quick'],d:'Tuna, yogurt, sweetcorn on toasted muffins, grilled cheddar.',s:['Mix tuna, Greek yogurt, sweetcorn, black pepper.','Pile onto muffin halves, top with cheddar.','Grill 3–4 min until bubbling.']},
+ {n:'Beef burrito bowls',img:'1529042410759-befb1204b468',url:'https://www.recipetineats.com/chilli-con-carne/',pro:'beef',meal:'dinner',t:20,kcal:640,p:46,tags:['meal-prep','high-protein'],d:'5% mince, taco spice, rice, beans, salsa, lime.',s:['Brown 5% mince with taco seasoning.','Layer over rice with black beans.','Top with salsa, yogurt, lime, coriander.']},
+ {n:'Protein overnight oats',img:'1526318896980-cf78c088247c',url:'https://www.bbcgoodfood.com/recipes/overnight-oats',pro:'yogurt',meal:'breakfast',t:5,kcal:440,p:34,tags:['no-cook','meal-prep'],d:'Oats, whey, chia, milk — grab-and-go from the fridge.',s:['Mix 60g oats, 1 scoop whey, 1 tbsp chia, 200ml milk.','Fridge overnight. Top with banana.']},
+ {n:'Paneer tikka skewers',img:'1603133872878-684f208fb84b',pro:'paneer',meal:'dinner',t:25,kcal:520,p:32,tags:['veg','grill'],d:'Charred spiced paneer, peppers, mint yogurt dip.',s:['Marinate paneer cubes in yogurt + tikka paste 15 min.','Skewer with peppers and onion; grill 10–12 min.','Serve with mint yogurt.']},
+ {n:'Chicken caesar wrap',img:'1512621776951-a57141f2eefd',url:'https://www.recipetineats.com/caesar-salad/',pro:'chicken',meal:'lunch',t:15,kcal:540,p:44,tags:['quick','classic'],d:'Grilled breast, crisp romaine, parmesan, light caesar.',s:['Season and grill sliced breast 6–7 min.','Toss romaine with light caesar + parmesan.','Wrap tight, halve.']},
+ {n:'Egg fried rice + prawns',img:'1512058564366-18510be2db19',url:'https://www.recipetineats.com/egg-fried-rice/',pro:'eggs',meal:'dinner',t:15,kcal:580,p:38,tags:['leftover-rice','quick'],d:'Day-old rice, 3 eggs, prawns, soy, spring onion.',s:['Scramble eggs, set aside.','Fry prawns with garlic; add cold rice on high heat.','Soy, sesame, eggs back in, spring onion.']},
+ {n:'Cottage cheese toast',img:'1525351484163-7529414344d8',pro:'yogurt',meal:'snack',t:5,kcal:280,p:24,tags:['no-cook','quick'],d:'Sourdough, whipped cottage cheese, chilli honey.',s:['Toast sourdough.','Spread cottage cheese thick.','Drizzle chilli honey, flaky salt.']},
+ {n:'Turkey chilli',img:'1547592180-85f173990554',url:'https://www.bbcgoodfood.com/recipes/turkey-chilli',pro:'chicken',meal:'dinner',t:45,kcal:510,p:47,tags:['meal-prep','cut'],d:'Lean turkey mince, beans, smoky tomato base. Freezes well.',s:['Brown turkey mince with onion + garlic.','Add chopped tomatoes, kidney beans, cumin, smoked paprika.','Simmer 30 min. Rice or jacket potato.']},
+ {n:'Tofu peanut stir-fry',img:'1476224203421-9ac39bcb3327',pro:'tofu',meal:'dinner',t:20,kcal:530,p:30,tags:['veg','quick'],d:'Crispy tofu, greens, peanut-soy sauce, noodles.',s:['Press + cube tofu, cornflour dust, fry until crisp.','Stir-fry broccoli + peppers.','Peanut butter, soy, lime, chilli — toss with noodles.']},
+ {n:'Smoked salmon bagel',img:'1598515214211-89d3c73ae83b',pro:'fish',meal:'breakfast',t:8,kcal:470,p:31,tags:['weekend','quick'],d:'Toasted bagel, cream cheese, smoked salmon, dill.',s:['Toast bagel.','Cream cheese, salmon, capers, dill, lemon.']},
+ {n:'Chicken fajita traybake',img:'1532550907401-a500c9a57435',url:'https://www.bbcgoodfood.com/recipes/chicken-fajitas',pro:'chicken',meal:'dinner',t:30,kcal:590,p:49,tags:['meal-prep','one-tray'],d:'Everything on one tray: chicken, peppers, fajita spice.',s:['Toss sliced breast, peppers, onion in fajita spice + oil.','Roast 22 min at 210°C.','Serve with tortillas + yogurt.']},
+ {n:'Beef & broccoli',img:'1585032226651-759b368d7246',url:'https://www.recipetineats.com/chinese-beef-and-broccoli/',pro:'beef',meal:'dinner',t:20,kcal:560,p:45,tags:['high-protein','quick'],d:'Flank steak strips, glossy soy-garlic sauce, jasmine rice.',s:['Sear thin beef strips hard, remove.','Steam-fry broccoli; add soy, garlic, honey, cornflour slurry.','Beef back in, serve on rice.']},
+ {n:'Protein pancakes',img:'1567620905732-2d1ec7ab7445',url:'https://www.bbcgoodfood.com/recipes/american-blueberry-pancakes',pro:'eggs',meal:'breakfast',t:12,kcal:430,p:35,tags:['weekend'],d:'Banana, eggs, oats, whey — blender pancakes.',s:['Blend 1 banana, 2 eggs, 40g oats, ½ scoop whey.','Fry small pancakes 2 min a side.','Greek yogurt + berries on top.']},
+ {n:'Tandoori fish + rice',img:'1504674900247-0877df9cc836',pro:'fish',meal:'dinner',t:25,kcal:540,p:42,tags:['cut','high-protein'],d:'Tandoori-spiced cod, cumin rice, kachumber salad.',s:['Coat cod in yogurt + tandoori paste, bake 12 min at 200°C.','Cumin rice; chop cucumber-tomato-onion salad.','Lemon over everything.']},
+ {n:'Halloumi egg muffins',img:'1607532941433-304659e8198a',pro:'eggs',meal:'snack',t:25,kcal:310,p:26,tags:['meal-prep','veg'],d:'Baked egg muffins with halloumi + spinach. Fridge for 4 days.',s:['Whisk 6 eggs; fold in cubed halloumi + spinach.','Pour into muffin tin.','Bake 18 min at 180°C.']},
+ {n:'Chicken pesto pasta',img:'1540189549336-e6e99c3679fe',pro:'chicken',meal:'lunch',t:20,kcal:650,p:50,tags:['bulk','meal-prep'],d:'Pasta, grilled chicken, pesto, cherry tomatoes, parmesan.',s:['Boil pasta; grill sliced chicken.','Toss with pesto + splash of pasta water.','Tomatoes + parmesan through.']},
+ {n:'Steak sandwich',img:'1555939594-58d7cb561ad1',pro:'beef',meal:'lunch',t:15,kcal:620,p:44,tags:['weekend'],d:'Minute steak, caramelised onions, rocket, ciabatta.',s:['Sear minute steak 90 sec a side, rest.','Soften onions with balsamic.','Build on toasted ciabatta with rocket + mustard mayo.']},
+ {n:'Miso salmon noodles',img:'1519708227418-c8fd9a32b7a2',pro:'fish',meal:'dinner',t:18,kcal:600,p:40,tags:['quick','high-protein'],d:'Miso-glazed salmon, udon, pak choi, sesame.',s:['Glaze salmon with miso + honey; grill 8 min.','Udon + pak choi in the same pan.','Sesame + spring onion.']},
+ {n:'Tofu scramble',img:'1525351484163-7529414344d8',pro:'tofu',meal:'breakfast',t:10,kcal:340,p:26,tags:['veg','quick'],d:'Turmeric tofu scramble, toast, avocado.',s:['Crumble firm tofu into pan with turmeric + garlic powder.','2 min on high; splash of soy.','Toast + avocado.']},
 ];
 let prefs=store.get('prefs',{goal:'maintain',protein:['chicken','beef','fish','eggs','yogurt'],time:'30',meal:['breakfast','lunch','dinner','snack']});
 function paintPrefs(){$$('.chips').forEach(g=>{const k=g.dataset.pref;g.querySelectorAll('.chip').forEach(c=>{
@@ -517,12 +528,15 @@ function recScore(r){let s=0;
   if(prefs.goal==='cut'&&r.kcal<=550)s+=2;
   if(prefs.goal==='maintain')s+=1;
   return s;}
-function card(r){return `<div class="rec"><h4>${r.n}</h4>
+function card(r){return `<div class="rec">${r.img?`<img loading="lazy" src="https://images.unsplash.com/photo-${r.img}?w=760&q=80&auto=format&fit=crop" alt="" onerror="this.remove()">`:''}<h4>${r.n}</h4>
   <div class="macros"><span class="pro">${r.p}g protein</span><span>${r.kcal} kcal</span><span>${r.t} min</span></div>
   <div class="tags">${r.tags.map(t=>'<i>#'+t+'</i>').join(' ')}<i>#${r.pro}</i></div>
   <p>${r.d}</p>
   <ol class="steps">${r.s.map(x=>'<li>'+x+'</li>').join('')}</ol>
-  <span class="more" onclick="this.closest('.rec').classList.toggle('open');this.textContent=this.closest('.rec').classList.contains('open')?'hide method ↑':'method ↓'">method ↓</span></div>`;}
+  <div style="display:flex;gap:14px;align-items:center">
+    <span class="more" onclick="this.closest('.rec').classList.toggle('open');this.textContent=this.closest('.rec').classList.contains('open')?'hide method ↑':'method ↓'">method ↓</span>
+    ${r.url?`<a class="more" target="_blank" rel="noopener" href="${r.url}">full recipe ↗</a>`:''}
+  </div></div>`;}
 let shuffleN=store.get('shuffleN',0);
 $('#shuffle').onclick=()=>{shuffleN++;store.set('shuffleN',shuffleN);renderFood();};
 function renderFood(){
@@ -608,6 +622,7 @@ function updStats(){
   const un=watch.filter(w=>w.last!==todayStr()).length;
   $('#stWatch').textContent=un;
   $('#stWatchHint').textContent=watch.length?(un?'open Jobs → daily sweep':'all checked today ✓'):'add companies in Jobs';
+  try{$('#stClosing').textContent=(DATA.filter(d=>d.status==='closing').length?DATA.filter(d=>d.status==='closing').length+' closing soon — move':applied.size+' applications logged');}catch(e){}
   const due=todos.filter(t=>!t.done&&t.due===todayStr()).length;
   $('#stTodo').textContent=due;
   const nextEv=events.filter(e=>e.date>=todayStr()).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time))[0];
