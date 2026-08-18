@@ -46,7 +46,7 @@
   .hsec{list-style:none; margin:0; padding:0; display:flex; justify-content:center; gap:20px}
   .shero .video_mov{width:280px; max-width:100%; aspect-ratio:9/16; object-fit:contain; mix-blend-mode:darken}
   .shero .hshot{width:280px; max-width:100%; aspect-ratio:9/16; object-fit:contain}
-  @media(max-width:640px){.hsec{flex-direction:column; align-items:center}}
+  @media(max-width:640px){.hsec{gap:12px} .shero .video_mov,.shero .hshot{width:min(42vw,280px)}}
   .sintro{padding:clamp(46px,7vh,84px) 0 6px}
   @media(max-width:1079px){.sintro{padding-left:var(--gutter); padding-right:var(--gutter)}}
   .eyebrow{font-family:var(--mono); font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); display:inline-flex; align-items:center; gap:9px}

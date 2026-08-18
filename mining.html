@@ -274,8 +274,9 @@
   @media(max-width:700px){
     .uxframe .browser{max-width:100%}
     .bdframe{max-width:100%}
-    .ca{position:static;width:auto;height:auto;opacity:0;transition:opacity .4s ease calc(var(--i)*90ms)}
-    .uxframe.on .ca,.swapwrap.on .ca{opacity:1}
+    .ca{display:none;position:static;width:auto;height:auto;opacity:0;transition:opacity .4s ease calc(var(--i)*90ms)}
+    .uxframe.on .ca,.swapwrap.on .ca{display:block;opacity:1;animation:cain .4s ease calc(var(--i)*90ms) both}
+    @keyframes cain{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
     .ca .ring,.ca .lead{display:none}
     .ca .txt{position:static;display:block;transform:none!important;width:auto;max-width:none;text-align:left!important;
       background:none;border-radius:0;padding:0 0 0 14px;border-left:2.5px solid var(--pink);
@@ -515,7 +516,7 @@
 })();
 </script>
 <script>(function(){
-  var sels=['.ctable-wrap','.ia-wrap'], hints=[];
+  var sels=['.ctable-wrap','.ia-wrap','.steps-wrap>div'], hints=[];
   sels.forEach(function(s){document.querySelectorAll(s).forEach(function(el){
     var d=document.createElement('div'); d.className='scrollhint'; d.textContent='scroll';
     el.parentNode.insertBefore(d,el); hints.push([d,el]);

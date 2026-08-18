@@ -306,6 +306,9 @@
   .scrollhint{display:none;justify-content:flex-end;align-items:center;gap:6px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
   .scrollhint::after{content:"\27F6";font-size:13px;animation:shx 1.4s ease-in-out infinite}
   @keyframes shx{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+
+  .back-btm{margin:38px 0 0}
+  @media(min-width:1121px){ .back-btm{display:none} }
 </style>
 
 <nav class="nav" id="nav">
@@ -860,15 +863,18 @@
     function closeDetail(){ if(cur){ cur.hidden=true; cur=null; } list.hidden=false;
       if(overview) overview.hidden=false;  /* restore Overview + photos */
       var y=section.getBoundingClientRect().top+window.scrollY-70; window.scrollTo({top:y, behavior:'smooth'}); }
-    list.querySelectorAll('.card').forEach(function(c){ c.addEventListener('click',function(){ openDetail(c.getAttribute('data-id')); }); });
-    section.querySelectorAll('[data-back]').forEach(function(b){ b.addEventListener('click',closeDetail); });
+    list.querySelectorAll('.card').forEach(function(c){ c.addEventListener('click',function(){ openDetail(c.getAttribute('data-id')); try{history.pushState({det:c.getAttribute('data-id')},'');}catch(e){} }); });
+    /* duplicate each back button at the end of its detail (shown on phone/tablet) */
+    section.querySelectorAll('.wi-detail').forEach(function(d){ var src=d.querySelector('[data-back]'); if(src){ var b=src.cloneNode(true); b.classList.add('back-btm'); d.appendChild(b); } });
+    section.querySelectorAll('[data-back]').forEach(function(b){ b.addEventListener('click',function(){ if(history.state&&history.state.det){ history.back(); } else { closeDetail(); } }); });
+    window.addEventListener('popstate',function(e){ if(e.state&&e.state.det){ openDetail(e.state.det); } else if(cur){ closeDetail(); } });
   })();
 
   document.querySelectorAll('a[href="#"]').forEach(function(a){ a.addEventListener('click',function(e){e.preventDefault();}); });
 })();
 </script>
 <script>(function(){
-  var sels=['.bp-scroll','.stagestrip'], hints=[];
+  var sels=['.bp-scroll','.stagestrip','.phases','.flow','.ir-rail'], hints=[];
   sels.forEach(function(s){document.querySelectorAll(s).forEach(function(el){
     var d=document.createElement('div'); d.className='scrollhint'; d.textContent='scroll';
     el.parentNode.insertBefore(d,el); hints.push([d,el]);
