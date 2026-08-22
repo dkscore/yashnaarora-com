@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Interview Prep · Revolut</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230A0B0D'/><text x='50' y='68' font-size='52' font-family='Georgia,serif' font-weight='700' fill='%238B7CF7' text-anchor='middle'>P</text></svg>">
+<script>(function(){var r=document.documentElement;try{var t=localStorage.getItem('prep-theme');r.setAttribute('data-theme',t||'dark')}catch(e){r.setAttribute('data-theme','dark')}})();</script>
+</head>
+<body>
+<style>
+  :root{
+    --bg:#0A0B0D; --bg2:#131418; --bg3:#1B1D22; --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.18);
+    --text:#F4F5F8; --muted:#9AA0AC; --faint:#666D79;
+    --acc:#8B7CF7; --acc-soft:rgba(139,124,247,.14); --acc-ink:#0B0713;
+    --ok:#3ACE9A; --ok-soft:rgba(58,206,154,.14); --warn:#E0A83E; --warn-soft:rgba(224,168,62,.14);
+    --bad:#E0625E; --bad-soft:rgba(224,98,94,.14);
+    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Helvetica Neue",Arial,sans-serif;
+    --maxw:1080px; --pad:clamp(16px,4vw,40px); --r:14px;
+  }
+  :root[data-theme="light"]{
+    --bg:#FAFAFC; --bg2:#FFFFFF; --bg3:#F0F1F5; --line:rgba(12,16,24,.1); --line2:rgba(12,16,24,.2);
+    --text:#101319; --muted:#4C5563; --faint:#8B93A1;
+    --acc:#6D5AE6; --acc-soft:rgba(109,90,230,.1); --acc-ink:#fff;
+    --ok:#0E9A6C; --ok-soft:rgba(14,154,108,.1); --warn:#B07A14; --warn-soft:rgba(176,122,20,.12);
+    --bad:#C6413D; --bad-soft:rgba(198,65,61,.1);
+  }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.55;letter-spacing:-.01em;transition:background .35s,color .35s}
+  a{color:var(--acc);text-decoration:none} a:hover{text-decoration:underline}
+  button{font-family:inherit;cursor:pointer}
+  .bar{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:16px;padding:14px var(--pad);background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .logo{font-weight:700;font-size:16px} .logo span{color:var(--acc)}
+  .tabs{display:flex;gap:4px;margin-left:6px;flex-wrap:wrap}
+  .tab{background:none;border:none;color:var(--muted);font-size:14px;font-weight:550;padding:8px 12px;border-radius:0;box-shadow:inset 0 -2px 0 transparent}
+  .tab:hover{color:var(--text)} .tab.on{color:var(--text);box-shadow:inset 0 -2px 0 var(--acc)}
+  .bar .right{margin-left:auto;display:flex;gap:10px;align-items:center}
+  .tbtn{background:none;border:1px solid var(--line2);color:var(--muted);width:32px;height:32px;border-radius:9px;display:grid;place-items:center}
+  .tbtn svg{width:14px;height:14px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+  .view{display:none;animation:vin .3s ease} .view.on{display:block}
+  @keyframes vin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+  h1{font-size:clamp(26px,4vw,40px);font-weight:750;letter-spacing:-.03em;margin:clamp(26px,5vh,50px) 0 6px}
+  h2{font-size:clamp(19px,2.6vw,25px);font-weight:720;letter-spacing:-.02em;margin:32px 0 12px}
+  h3{font-size:16px;font-weight:700;margin:0 0 8px}
+  .lead{color:var(--muted);font-size:15px;max-width:70ch;margin:0 0 8px}
+  .panel{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;margin-bottom:14px}
+  .grid{display:grid;gap:12px} .g2{grid-template-columns:1fr 1fr} .g3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:760px){.g2,.g3{grid-template-columns:1fr}}
+  .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;margin-bottom:8px}
+  .step{display:grid;grid-template-columns:30px 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+  .step:first-child{border-top:none}
+  .step .n{width:26px;height:26px;border-radius:50%;background:var(--acc-soft);color:var(--acc);display:grid;place-items:center;font-weight:800;font-size:13px}
+  .step b{display:block} .step small{color:var(--muted);font-size:13px}
+  .pill{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--acc-soft);color:var(--acc);margin-left:6px}
+  .btn{background:var(--acc);color:var(--acc-ink);border:1px solid var(--acc);border-radius:10px;padding:10px 16px;font-weight:650;font-size:14px}
+  .btn.ghost{background:none;color:var(--text);border-color:var(--line2)}
+  .btn.ghost:hover{border-color:var(--acc);color:var(--acc)}
+  .btn:disabled{opacity:.4}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+  .chip{border:1px solid var(--line2);background:none;color:var(--muted);font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px}
+  .chip.on{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+  /* quiz */
+  .quizhead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+  .timer{font-variant-numeric:tabular-nums;font-weight:800;font-size:20px}
+  .timer.warn{color:var(--warn)} .timer.danger{color:var(--bad)}
+  .qprog{font-size:13px;color:var(--muted)}
+  .qtext{font-size:17px;font-weight:600;margin:6px 0 14px;line-height:1.5;white-space:pre-wrap}
+  .opts{display:flex;flex-direction:column;gap:9px}
+  .opt{text-align:left;border:1px solid var(--line2);background:var(--bg2);color:var(--text);border-radius:11px;padding:12px 14px;font-size:14.5px;display:flex;gap:10px;align-items:flex-start}
+  .opt:hover{border-color:var(--acc)}
+  .opt .lab{font-weight:800;color:var(--faint);flex:none}
+  .opt.sel{border-color:var(--acc);background:var(--acc-soft)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-soft)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+  .expl{margin-top:12px;padding:11px 13px;border-radius:10px;background:var(--bg3);font-size:13.5px;color:var(--muted);display:none}
+  .expl.show{display:block} .expl b{color:var(--text)}
+  .qnav{display:flex;justify-content:space-between;gap:10px;margin-top:16px}
+  .result .big{font-size:44px;font-weight:800;letter-spacing:-.02em}
+  .bd{display:flex;flex-direction:column;gap:6px;margin-top:12px}
+  .bd .row{display:grid;grid-template-columns:1fr auto;gap:8px;font-size:13.5px;padding:6px 0;border-top:1px solid var(--line)}
+  .bar-mini{height:6px;background:var(--bg3);border-radius:3px;overflow:hidden;margin-top:3px}
+  .bar-mini i{display:block;height:100%;background:var(--acc)}
+  /* star */
+  .starq{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px;background:var(--bg2)}
+  .starq summary{cursor:pointer;font-weight:600;font-size:14.5px}
+  .starq .val{font-size:11px;color:var(--acc);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+  .starbox{display:grid;gap:8px;margin-top:12px}
+  .starbox label{font-size:12px;color:var(--faint);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+  .starbox textarea{width:100%;background:var(--bg3);border:1px solid var(--line);border-radius:9px;color:var(--text);font-family:var(--sans);font-size:13.5px;padding:8px 10px;min-height:52px;resize:vertical}
+  .hint{font-size:12.5px;color:var(--faint);margin-top:4px}
+  .foot{margin:44px 0 40px;font-size:12px;color:var(--faint)}
+  .callout{border-left:3px solid var(--acc);padding:2px 0 2px 14px;margin:10px 0;color:var(--muted);font-size:14px}
+  ul.tight{margin:6px 0;padding-left:18px} ul.tight li{margin-bottom:5px;color:var(--muted);font-size:14px}
+</style>
+
+<div class="bar">
+  <span class="logo">Interview <span>Prep</span></span>
+  <nav class="tabs">
+    <button class="tab on" data-v="overview">Revolut process</button>
+    <button class="tab" data-v="aptitude">Aptitude (CCAT)</button>
+    <button class="tab" data-v="behavioural">Behavioural</button>
+    <button class="tab" data-v="design">Design rounds</button>
+  </nav>
+  <div class="right">
+    <a href="jobs.html" style="font-size:13px;color:var(--muted)">tracker</a>
+    <button class="tbtn" id="themeBtn" aria-label="Theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- OVERVIEW -->
+  <section class="view on" id="v-overview">
+    <h1>Prep for Revolut</h1>
+    <p class="lead">Everything here maps to Revolut's actual hiring stages. Work through the aptitude test until you are fast, rehearse the behavioural answers against their values, and practise the design rounds. Start with whichever stage is next for you.</p>
+    <div class="panel">
+      <div class="k">The process, in order</div>
+      <div class="step"><span class="n">1</span><div><b>Online assessment <span class="pill">practice this first</span></b><small>The Criteria Cognitive Aptitude Test (CCAT): 50 questions in 15 minutes, no calculator, covering numerical, verbal, logical and abstract reasoning. Plus a short personality questionnaire. Average score is around 24 out of 50; aim for 30 or more.</small></div></div>
+      <div class="step"><span class="n">2</span><div><b>Recruiter call (30 to 45 min)</b><small>Motivation and culture fit. Expect "Why Revolut?" and "Tell me about a time you took ownership." Covered in the Behavioural tab.</small></div></div>
+      <div class="step"><span class="n">3</span><div><b>Product sense round</b><small>Design or improve a feature for a Revolut use case. Structure, user focus, trade-offs, metrics. Design rounds tab.</small></div></div>
+      <div class="step"><span class="n">4</span><div><b>Analytical round</b><small>Interpret data, define KPIs, design an experiment. Show you think in numbers, not just visuals.</small></div></div>
+      <div class="step"><span class="n">5</span><div><b>Problem-solving case</b><small>A case where you get no data unless you ask for it. They score how you structure the problem and what you ask.</small></div></div>
+      <div class="step"><span class="n">6</span><div><b>Bar Raiser interview</b><small>One achievement probed two or three layers deep. Know your projects cold, including your specific role and what you would change.</small></div></div>
+    </div>
+    <div class="callout">Timeline is usually two to six weeks. Everything is scored against fixed scorecards, so specifics and structure beat vague enthusiasm.</div>
+  </section>
+
+  <!-- APTITUDE -->
+  <section class="view" id="v-aptitude">
+    <h1>Aptitude practice</h1>
+    <p class="lead">Revolut uses the CCAT: 50 questions in 15 minutes, roughly 18 seconds each, no calculator. The skill is speed and knowing when to skip. Run full timed simulations, and drill weak categories untimed with explanations.</p>
+
+    <div id="quizMenu">
+      <div class="grid g2">
+        <div class="panel">
+          <div class="k">Full simulation</div>
+          <h3>CCAT mock: 50 questions, 15 minutes</h3>
+          <p class="lead" style="font-size:14px">Real format and timing. Skipping is allowed and often smart. You get a score out of 50, a category breakdown, and full explanations at the end.</p>
+          <button class="btn" id="startSim">Start timed mock</button>
+        </div>
+        <div class="panel">
+          <div class="k">Practice by category</div>
+          <h3>Untimed, instant feedback</h3>
+          <p class="lead" style="font-size:14px">Pick an area, see the answer and explanation after each question. Build accuracy first, then add speed.</p>
+          <div class="chips" id="catChips"></div>
+          <button class="btn ghost" id="startCat" disabled>Start category drill</button>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="k">How to score well</div>
+        <ul class="tight">
+          <li>You are not expected to finish all 50. Answer accurately and keep moving; do not sink 90 seconds into one question.</li>
+          <li>There is no penalty for wrong answers, so never leave a question blank at the very end. Guess the last few.</li>
+          <li>Numerical questions rarely need exact maths. Estimate and eliminate options.</li>
+          <li>Do the quick verbal and series questions first, flag the heavy logic for a second pass.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="quizArea" style="display:none">
+      <div class="panel">
+        <div class="quizhead">
+          <span class="qprog" id="qProg"></span>
+          <span class="timer" id="qTimer"></span>
+        </div>
+        <div class="qtext" id="qText"></div>
+        <div class="opts" id="qOpts"></div>
+        <div class="expl" id="qExpl"></div>
+        <div class="qnav">
+          <button class="btn ghost" id="qSkip">Skip</button>
+          <button class="btn" id="qNext">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="quizResult" style="display:none"></div>
+  </section>
+
+  <!-- BEHAVIOURAL -->
+  <section class="view" id="v-behavioural">
+    <h1>Behavioural &amp; values</h1>
+    <p class="lead">Revolut scores answers against its core values. For each one below there is a likely question and the experience of yours that fits best. Draft each answer in STAR (Situation, Task, Action, Result); it saves in your browser.</p>
+    <div id="starList"></div>
+    <h2>Situational judgement</h2>
+    <p class="lead">Pick the most and least effective response, then reveal the reasoning. These build the judgement the recruiter call and case rounds test.</p>
+    <div id="sjtArea"></div>
+  </section>
+
+  <!-- DESIGN -->
+  <section class="view" id="v-design">
+    <h1>Design rounds</h1>
+    <p class="lead">The product-designer rounds test product thinking, analytical rigour and how you handle ambiguity. Rehearse each out loud until the structure is automatic.</p>
+
+    <div class="panel">
+      <div class="k">Round 1 · Product sense</div>
+      <h3>"Design or improve a feature for Revolut"</h3>
+      <p class="lead" style="font-size:14px">Do not jump to a screen. Walk them through a structure:</p>
+      <ul class="tight">
+        <li><b>Clarify</b> the goal and who it is for. Which user, which problem, what does success look like.</li>
+        <li><b>Users and needs</b>. Name a segment and their real pain, ideally from how Revolut actually works.</li>
+        <li><b>Prioritise</b> the one problem worth solving now, and say why the others wait.</li>
+        <li><b>Solution</b>. Two or three ideas, pick one, sketch the flow, name the key screens or moments.</li>
+        <li><b>Trade-offs and metrics</b>. What you are trading, and the metric that tells you it worked.</li>
+      </ul>
+      <div class="callout">Practise on: help users save more without thinking about it; simplify the card-freeze flow; onboard a first-time international transfer; surface a subscription upgrade at the right moment. Give yourself 5 minutes each, out loud.</div>
+    </div>
+
+    <div class="panel">
+      <div class="k">Round 2 · Analytical depth</div>
+      <h3>KPIs, data and experiments</h3>
+      <ul class="tight">
+        <li>For any feature, name the <b>one primary metric</b> and a <b>guardrail metric</b> (the thing you must not harm).</li>
+        <li>Be ready to design an <b>A/B test</b>: hypothesis, what you change, what you measure, how long, what result would make you ship.</li>
+        <li>Tie design decisions to numbers. Your Mining Journal work is perfect here: touchpoints halved, drop-off as the metric.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="k">Round 3 · Problem-solving case</div>
+      <h3>The case where you get no data unless you ask</h3>
+      <ul class="tight">
+        <li>They are testing whether you <b>ask before assuming</b>. Open by asking clarifying questions and stating your assumptions out loud.</li>
+        <li>Structure first: break the problem into parts, then go deep on the part that matters most.</li>
+        <li>Think in ranges and estimates. Show your reasoning, not a memorised answer.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="k">Round 4 · Bar Raiser</div>
+      <h3>One achievement, probed two or three layers deep</h3>
+      <ul class="tight">
+        <li>Pick two projects you can go very deep on. HMRC notification strategy and the Mining Journal redesign are your strongest.</li>
+        <li>For each, know: the exact problem, <b>your specific role</b> versus the team, why you made each decision, what the outcome was, and what you would do differently.</li>
+        <li>They will keep asking "why" and "what was your part". Vague or borrowed credit is what fails this round, so be precise about what was yours.</li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="foot">Private prep page for Yashna. Progress saves in this browser only. Aptitude questions are practice material in the CCAT style, not real exam questions. Verify Revolut's current process on their careers page before your assessment.</p>
+</div>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+/* theme + tabs */
+$('#themeBtn').onclick=()=>{const r=document.documentElement,t=r.getAttribute('data-theme')==='dark'?'light':'dark';r.setAttribute('data-theme',t);localStorage.setItem('prep-theme',t);};
+function show(v,push){$$('.tab').forEach(t=>t.classList.toggle('on',t.dataset.v===v));$$('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+v));if(push!==false){try{history.pushState({v},'','#'+v)}catch(e){}}}
+$$('.tab').forEach(t=>t.onclick=()=>show(t.dataset.v));
+window.addEventListener('popstate',e=>show((e.state&&e.state.v)||location.hash.replace('#','')||'overview',false));
+if(location.hash)show(location.hash.replace('#',''),false);
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+/* ===== question bank ===== */
+const CATLABEL={numerical:'Numerical',series:'Series',verbal:'Verbal',logical:'Logical',attention:'Attention',spatial:'Abstract'};
+const BANK=/*__BANK__*/[{"category": "numerical", "q": "What is 25% of 240?", "options": ["40", "50", "60", "80"], "answer": 2, "explanation": "25% is one quarter, and 240 divided by 4 equals 60.", "difficulty": "easy"}, {"category": "numerical", "q": "The average of 4 numbers is 15. What is the sum of the 4 numbers?", "options": ["45", "60", "75", "19"], "answer": 1, "explanation": "Sum equals average times count: 15 x 4 = 60.", "difficulty": "easy"}, {"category": "numerical", "q": "A recipe mixes flour and sugar in a ratio of 3:1. If 9 cups of flour are used, how many cups of sugar are needed?", "options": ["2", "3", "6", "27"], "answer": 1, "explanation": "Sugar is one third of the flour amount: 9 / 3 = 3 cups.", "difficulty": "easy"}, {"category": "numerical", "q": "A car travels 180 miles in 3 hours. What is its average speed in miles per hour?", "options": ["50", "55", "60", "90"], "answer": 2, "explanation": "Speed equals distance divided by time: 180 / 3 = 60 mph.", "difficulty": "easy"}, {"category": "numerical", "q": "A shirt priced at $80 is discounted by 15%. What is the sale price?", "options": ["$65", "$68", "$72", "$76"], "answer": 1, "explanation": "15% of 80 is 12, so 80 - 12 = $68.", "difficulty": "medium"}, {"category": "numerical", "q": "A store buys an item for $40 and sells it for $50. What is the profit as a percentage of cost?", "options": ["10%", "20%", "25%", "40%"], "answer": 2, "explanation": "Profit is $10 on a $40 cost, and 10 / 40 = 25%.", "difficulty": "medium"}, {"category": "numerical", "q": "If 5 workers can build a wall in 12 days, how many days would 10 workers take, working at the same rate?", "options": ["6", "8", "10", "24"], "answer": 0, "explanation": "The job is 60 worker-days; 60 / 10 workers = 6 days.", "difficulty": "medium"}, {"category": "numerical", "q": "If 3x + 7 = 22, what is the value of x?", "options": ["3", "5", "7", "15"], "answer": 1, "explanation": "3x = 22 - 7 = 15, so x = 5.", "difficulty": "medium"}, {"category": "numerical", "q": "The average of 5 numbers is 20. When one number is removed, the average of the remaining 4 is 18. What was the removed number?", "options": ["22", "25", "28", "38"], "answer": 2, "explanation": "The 5 numbers total 100 and the 4 remaining total 72, so the removed number is 28.", "difficulty": "medium"}, {"category": "numerical", "q": "A sum of $60 is divided between A and B in the ratio 2:3. How much does B receive?", "options": ["$24", "$30", "$36", "$40"], "answer": 2, "explanation": "There are 5 parts of $12 each; B gets 3 parts = $36.", "difficulty": "medium"}, {"category": "numerical", "q": "A $100 item is first increased by 20% and then decreased by 20%. What is the final price?", "options": ["$96", "$98", "$100", "$104"], "answer": 0, "explanation": "100 x 1.2 = 120, then 120 x 0.8 = $96; the two changes do not cancel.", "difficulty": "hard"}, {"category": "numerical", "q": "One pipe fills a tank in 4 hours and another fills it in 6 hours. Working together, how long do they take to fill the tank?", "options": ["2 hours", "2.4 hours", "2.5 hours", "5 hours"], "answer": 1, "explanation": "Combined rate is 1/4 + 1/6 = 5/12 tank per hour, so time is 12/5 = 2.4 hours.", "difficulty": "hard"}, {"category": "numerical", "q": "A merchant marks up an item by 50% above cost, then gives a 20% discount on the marked price. If the cost was $100, what is the profit percentage?", "options": ["20%", "25%", "30%", "40%"], "answer": 0, "explanation": "Marked price is $150; a 20% discount gives $120, a $20 profit on $100 cost = 20%.", "difficulty": "hard"}, {"category": "numerical", "q": "The sum of two numbers is 40 and their difference is 8. What is the larger number?", "options": ["16", "20", "24", "28"], "answer": 2, "explanation": "The larger number is (40 + 8) / 2 = 24.", "difficulty": "hard"}, {"category": "numerical", "q": "A bag holds red and blue marbles in the ratio 3:2, with 15 red marbles. How many blue marbles must be added to make the ratio 1:1?", "options": ["3", "5", "10", "15"], "answer": 1, "explanation": "One part is 5, so there are 10 blue marbles; reaching 15 to match the red requires adding 5.", "difficulty": "hard"}, {"category": "numerical", "q": "A student has an average of 80 across 3 tests. What score on a 4th test would raise the average to 82?", "options": ["84", "86", "88", "90"], "answer": 2, "explanation": "Three tests total 240; a 4-test average of 82 needs 328 total, so the 4th score is 88.", "difficulty": "hard"}, {"category": "series", "q": "What number comes next in the series? 7, 10, 13, 16, ?", "options": ["18", "19", "20", "21"], "answer": 1, "explanation": "Each term increases by 3, so 16 + 3 = 19.", "difficulty": "easy"}, {"category": "series", "q": "What number comes next in the series? 45, 40, 35, 30, ?", "options": ["20", "25", "26", "28"], "answer": 1, "explanation": "Each term decreases by 5, so 30 - 5 = 25.", "difficulty": "easy"}, {"category": "series", "q": "What number comes next in the series? 3, 6, 12, 24, ?", "options": ["36", "42", "48", "30"], "answer": 2, "explanation": "Each term doubles, so 24 x 2 = 48.", "difficulty": "easy"}, {"category": "series", "q": "What letter comes next in the series? B, D, F, H, ?", "options": ["I", "J", "K", "L"], "answer": 1, "explanation": "The letters skip one each time (every other letter), so after H comes J.", "difficulty": "easy"}, {"category": "series", "q": "What is the missing term in the series? 5, 10, 20, ?, 80", "options": ["30", "40", "50", "60"], "answer": 1, "explanation": "Each term doubles: 20 x 2 = 40, and 40 x 2 = 80.", "difficulty": "medium"}, {"category": "series", "q": "What number comes next in the series? 1, 2, 4, 7, 11, ?", "options": ["14", "15", "16", "17"], "answer": 2, "explanation": "The differences grow by one each step (+1, +2, +3, +4), so add 5: 11 + 5 = 16.", "difficulty": "medium"}, {"category": "series", "q": "What number comes next in the series? 8, 3, 12, 6, 16, 9, ?", "options": ["12", "18", "20", "24"], "answer": 2, "explanation": "Two interleaved series: 8, 12, 16 (+4) and 3, 6, 9 (+3); the next term continues the first series, 16 + 4 = 20.", "difficulty": "medium"}, {"category": "series", "q": "What letter comes next in the series? C, F, I, L, ?", "options": ["M", "N", "O", "P"], "answer": 2, "explanation": "The letters advance by 3 positions each time (C, F, I, L), so after L comes O.", "difficulty": "medium"}, {"category": "series", "q": "What number comes next in the series? 2, 6, 5, 15, 14, 42, ?", "options": ["41", "43", "45", "126"], "answer": 0, "explanation": "The pattern alternates x3 then -1, so after 42 subtract 1: 42 - 1 = 41.", "difficulty": "hard"}, {"category": "series", "q": "What number comes next in the series? 3, 4, 6, 10, 18, ?", "options": ["30", "32", "34", "36"], "answer": 2, "explanation": "The differences double each time (+1, +2, +4, +8), so add 16: 18 + 16 = 34.", "difficulty": "hard"}, {"category": "series", "q": "What letter comes next in the series? A, B, D, G, K, P, ?", "options": ["T", "U", "V", "W"], "answer": 2, "explanation": "The gaps grow by one each time (+1, +2, +3, +4, +5), so from P skip 6 letters to reach V.", "difficulty": "hard"}, {"category": "series", "q": "What number comes next in the series? 100, 50, 52, 26, 28, ?", "options": ["14", "30", "24", "56"], "answer": 0, "explanation": "The pattern alternates divide by 2 then +2, so after 28 divide by 2: 28 / 2 = 14.", "difficulty": "hard"}, {"category": "verbal", "q": "HOT is to COLD as UP is to:", "options": ["down", "high", "sky", "tall"], "answer": 0, "explanation": "The pair are direct opposites; the opposite of 'up' is 'down'.", "difficulty": "easy"}, {"category": "verbal", "q": "Which word is closest in meaning to HAPPY?", "options": ["angry", "joyful", "tired", "hungry"], "answer": 1, "explanation": "'Joyful' is a synonym for happy; the others describe unrelated states.", "difficulty": "easy"}, {"category": "verbal", "q": "Which word is most nearly OPPOSITE in meaning to BEGIN?", "options": ["start", "commence", "end", "open"], "answer": 2, "explanation": "'End' is the antonym of 'begin'; 'start' and 'commence' are synonyms.", "difficulty": "easy"}, {"category": "verbal", "q": "Which word does NOT belong with the others?", "options": ["rose", "tulip", "oak", "daisy"], "answer": 2, "explanation": "An oak is a tree, while a rose, tulip, and daisy are all flowers.", "difficulty": "easy"}, {"category": "verbal", "q": "AUTHOR is to BOOK as COMPOSER is to:", "options": ["symphony", "orchestra", "piano", "audience"], "answer": 0, "explanation": "An author creates a book just as a composer creates a symphony; the others are performers, instruments, or listeners.", "difficulty": "medium"}, {"category": "verbal", "q": "Which word is closest in meaning to CANDID?", "options": ["secretive", "frank", "cautious", "hostile"], "answer": 1, "explanation": "'Candid' means openly honest, which matches 'frank'.", "difficulty": "medium"}, {"category": "verbal", "q": "Which word is most nearly OPPOSITE in meaning to ABUNDANT?", "options": ["plentiful", "scarce", "ample", "generous"], "answer": 1, "explanation": "'Abundant' means in great supply; its opposite is 'scarce', while the others are near-synonyms.", "difficulty": "medium"}, {"category": "verbal", "q": "Which word does NOT belong with the others?", "options": ["copper", "iron", "gold", "granite"], "answer": 3, "explanation": "Granite is a rock, while copper, iron, and gold are all metals.", "difficulty": "medium"}, {"category": "verbal", "q": "Choose the word that best completes the sentence: 'Although the report was thorough, it was so ______ that few people finished reading it.'", "options": ["concise", "lengthy", "brief", "exciting"], "answer": 1, "explanation": "'Although' signals contrast, and something too long to finish is 'lengthy'; 'concise' and 'brief' contradict that.", "difficulty": "medium"}, {"category": "verbal", "q": "WHISPER is to SHOUT as TRICKLE is to:", "options": ["drop", "flood", "stream", "drip"], "answer": 1, "explanation": "A whisper is a small amount of sound and a shout a large one; likewise a trickle is a small flow and a flood a large one.", "difficulty": "hard"}, {"category": "verbal", "q": "Which word is closest in meaning to EPHEMERAL?", "options": ["eternal", "fleeting", "powerful", "ancient"], "answer": 1, "explanation": "'Ephemeral' means lasting a very short time, which matches 'fleeting'.", "difficulty": "hard"}, {"category": "verbal", "q": "Which word is most nearly OPPOSITE in meaning to GARRULOUS?", "options": ["talkative", "taciturn", "cheerful", "honest"], "answer": 1, "explanation": "'Garrulous' means excessively talkative; 'taciturn' means habitually silent, its opposite.", "difficulty": "hard"}, {"category": "verbal", "q": "Choose the word that best completes the sentence: 'The negotiator's ______ tone defused the tension, allowing both sides to reach an agreement.'", "options": ["belligerent", "conciliatory", "indifferent", "sarcastic"], "answer": 1, "explanation": "A tone that defuses tension and leads to agreement is 'conciliatory'; the others would worsen or ignore the conflict.", "difficulty": "hard"}, {"category": "verbal", "q": "Which word does NOT belong with the others?", "options": ["triangle", "square", "circle", "pentagon"], "answer": 2, "explanation": "A circle has no straight sides or angles, while a triangle, square, and pentagon are all polygons.", "difficulty": "hard"}, {"category": "logical", "q": "All roses are flowers. All flowers need water. Which statement must be true?", "options": ["All roses need water", "All flowers are roses", "Some water is a rose", "No roses need water"], "answer": 0, "explanation": "Chaining the two 'all' statements: roses are flowers, and flowers need water, so all roses need water.", "difficulty": "easy"}, {"category": "logical", "q": "If it rains, the outdoor game is canceled. The game was not canceled. Which statement must be true?", "options": ["It rained", "It did not rain", "The game was played in the rain", "It might have rained"], "answer": 1, "explanation": "By modus tollens, if rain forces cancellation and there was no cancellation, then it did not rain.", "difficulty": "easy"}, {"category": "logical", "q": "All cats are mammals. No mammals are reptiles. Which statement must be true?", "options": ["No cats are reptiles", "Some cats are reptiles", "All reptiles are cats", "Some mammals are reptiles"], "answer": 0, "explanation": "Cats are a subset of mammals, and no mammals are reptiles, so no cats can be reptiles.", "difficulty": "easy"}, {"category": "logical", "q": "Tom is taller than Sara. Sara is taller than Priya. Who is the shortest?", "options": ["Tom", "Sara", "Priya", "Cannot be determined"], "answer": 2, "explanation": "The order is Tom > Sara > Priya, so Priya is the shortest.", "difficulty": "medium"}, {"category": "logical", "q": "In a race with no ties, Ben finished ahead of Carl, Carl finished ahead of Dan, and Amy finished ahead of Ben. Who finished first?", "options": ["Ben", "Amy", "Carl", "Dan"], "answer": 1, "explanation": "The finishing order is Amy > Ben > Carl > Dan, so Amy finished first.", "difficulty": "medium"}, {"category": "logical", "q": "Some doctors are runners. All runners are healthy. Which statement must be true?", "options": ["All doctors are healthy", "Some doctors are healthy", "All healthy people are doctors", "No doctors are runners"], "answer": 1, "explanation": "The doctors who are runners must be healthy, so at least some doctors are healthy; nothing forces all doctors to be.", "difficulty": "medium"}, {"category": "logical", "q": "Any number divisible by 6 is also divisible by 3. The number 14 is not divisible by 3. Which statement must be true?", "options": ["14 is divisible by 6", "14 is not divisible by 6", "14 is a prime number", "Cannot be determined"], "answer": 1, "explanation": "If divisibility by 6 requires divisibility by 3, then a number not divisible by 3 cannot be divisible by 6 (modus tollens).", "difficulty": "medium"}, {"category": "logical", "q": "All engineers know math. Some people who know math are teachers. What can be concluded about engineers and teachers?", "options": ["Some engineers are teachers", "All teachers know math", "Nothing can be concluded about engineers and teachers", "No engineers are teachers"], "answer": 2, "explanation": "The teachers who know math need not be the engineers, so no link between engineers and teachers is established.", "difficulty": "medium"}, {"category": "logical", "q": "No students who study fail the exam. Some students who study are athletes. Which statement must be true?", "options": ["Some athletes do not fail the exam", "All athletes study", "Some athletes fail the exam", "No athletes study"], "answer": 0, "explanation": "The students who study include some athletes, and none of those studiers fail, so some athletes do not fail.", "difficulty": "hard"}, {"category": "logical", "q": "Five students take a test with no tied scores. Ann scored higher than Bob. Cara scored lower than Bob. Dan scored higher than Ann. Eve scored between Bob and Ann. Who scored highest?", "options": ["Ann", "Dan", "Eve", "Bob"], "answer": 1, "explanation": "The order is Dan > Ann > Eve > Bob > Cara, so Dan scored highest.", "difficulty": "hard"}, {"category": "logical", "q": "If the alarm rings, everyone leaves. If everyone leaves, the building is empty. The building is not empty. Which statement must be true?", "options": ["The alarm rang", "The alarm did not ring", "Everyone left", "Cannot be determined"], "answer": 1, "explanation": "A non-empty building means not everyone left, which means the alarm did not ring (chained modus tollens).", "difficulty": "hard"}, {"category": "logical", "q": "Only members are allowed to enter the club. John is not a member. Which statement must be true?", "options": ["John can enter the club", "John cannot enter the club", "John is a guest", "Cannot be determined"], "answer": 1, "explanation": "'Only members can enter' means non-members are barred, so John, not being a member, cannot enter.", "difficulty": "hard"}, {"category": "attention", "q": "Three of the following numbers are identical. Which ONE is different?", "options": ["483920", "483920", "483902", "483920"], "answer": 2, "explanation": "The odd one out ends in 902 while the others end in 920 (the last two digits are swapped).", "difficulty": "easy"}, {"category": "attention", "q": "Which option is an EXACT match for the reference code:  KTP-4471-XZ ?", "options": ["KTP-4471-XZ", "KPT-4471-XZ", "KTP-4741-XZ", "KTP-4471-ZX"], "answer": 0, "explanation": "Only the first is identical; the others swap KP/PT, 47/74, or ZX/XZ respectively.", "difficulty": "easy"}, {"category": "attention", "q": "Which ONE name is spelled differently from the other three?", "options": ["Katherine Thomlinson", "Katherine Thomlinson", "Katherine Thomlison", "Katherine Thomlinson"], "answer": 2, "explanation": "The third is 'Thomlison' (missing the second 'n'); the others are 'Thomlinson'.", "difficulty": "medium"}, {"category": "attention", "q": "Which ONE date does not match the other three?", "options": ["07/14/2026", "07/14/2026", "07/24/2026", "07/14/2026"], "answer": 2, "explanation": "The third reads 07/24 while all others read 07/14.", "difficulty": "medium"}, {"category": "attention", "q": "In which pair are the two strings EXACTLY identical?", "options": ["8829-AQ  /  8829-QA", "5531-BX  /  5531-BX", "7742-KM  /  7742-KN", "9908-TR  /  9008-TR"], "answer": 1, "explanation": "Only 5531-BX / 5531-BX match; the other pairs differ in the suffix order, last letter, or a digit.", "difficulty": "medium"}, {"category": "attention", "q": "Which ONE serial number is different from the other three?", "options": ["X9F2K7B4Q", "X9F2K7B4Q", "X9F2K7B4Q", "X9F2K7B4O"], "answer": 3, "explanation": "The fourth ends in the letter O, while the others end in the letter Q.", "difficulty": "hard"}, {"category": "attention", "q": "Which option EXACTLY matches the reference:  60492-8817-XQ ?", "options": ["60492-8817-XG", "60492-8871-XQ", "60492-8817-XQ", "60429-8817-XQ"], "answer": 2, "explanation": "Only the third matches; the others change XG for XQ, transpose 8817 to 8871, or transpose 60492 to 60429.", "difficulty": "hard"}, {"category": "attention", "q": "Which ONE surname is spelled differently from the other three?", "options": ["Anastasiya Kowalczyk", "Anastasiya Kowalczyk", "Anastasiya Kowalczyk", "Anastasiya Kowalczyc"], "answer": 3, "explanation": "The fourth ends in 'Kowalczyc' (c), while the others end in 'Kowalczyk' (k).", "difficulty": "hard"}, {"category": "attention", "q": "Which ONE amount is different from the other three?", "options": ["1,024,768.50", "1,024,768.50", "1,024,786.50", "1,024,768.50"], "answer": 2, "explanation": "The third reads 786 in the final group while the others read 768 (the 8 and 6 are swapped).", "difficulty": "medium"}, {"category": "attention", "q": "Which option EXACTLY matches the reference:  j.mcallister_04@northgate-hr.co.uk ?", "options": ["j.mcallister_04@northgate-hr.co.uk", "j.mcallister_04@northgale-hr.co.uk", "j.macallister_04@northgate-hr.co.uk", "j.mcallister_40@northgate-hr.co.uk"], "answer": 0, "explanation": "Only the first matches; the others read 'northgale', 'macallister', or '_40' instead of '_04'.", "difficulty": "hard"}, {"category": "spatial", "q": "Which of the following is the odd one out? BCD, FGH, JKL, MNP", "options": ["BCD", "FGH", "JKL", "MNP"], "answer": 3, "explanation": "BCD, FGH, and JKL are each three consecutive letters, but MNP skips O, so it does not follow the consecutive-letter rule.", "difficulty": "easy"}, {"category": "spatial", "q": "What letter comes next in the series: A, C, E, G, ?", "options": ["H", "I", "J", "K"], "answer": 1, "explanation": "The series skips one letter each step (the odd-positioned letters), so after G comes I.", "difficulty": "easy"}, {"category": "spatial", "q": "What number comes next in the series: 2, 6, 12, 20, 30, ?", "options": ["40", "42", "44", "36"], "answer": 1, "explanation": "The gaps grow by 2 each time (4, 6, 8, 10, then 12), so 30 + 12 = 42.", "difficulty": "medium"}, {"category": "spatial", "q": "What comes next in the series of letter pairs: AZ, BY, CX, DW, ?", "options": ["EV", "EU", "FV", "DV"], "answer": 0, "explanation": "The first letter moves forward (A, B, C, D, E) while the second letter moves backward (Z, Y, X, W, V), giving EV.", "difficulty": "medium"}, {"category": "spatial", "q": "What number comes next in the series: 1, 2, 6, 24, 120, ?", "options": ["600", "720", "240", "360"], "answer": 1, "explanation": "Each term is multiplied by the next whole number (x2, x3, x4, x5, then x6), so 120 x 6 = 720.", "difficulty": "hard"}, {"category": "spatial", "q": "What number comes next in the series: 2, 8, 5, 12, 8, 16, 11, ?", "options": ["20", "14", "18", "22"], "answer": 0, "explanation": "Two interleaved series run in parallel: 2, 5, 8, 11 (adding 3) and 8, 12, 16, ? (adding 4), so the next term is 16 + 4 = 20.", "difficulty": "hard"}, {"category": "spatial", "q": "What number comes next in the series: 2, 3, 5, 9, 17, ?", "options": ["33", "31", "34", "25"], "answer": 0, "explanation": "Each term is double the previous term minus 1 (equivalently the added amounts double: 1, 2, 4, 8, 16), so 17 x 2 - 1 = 33.", "difficulty": "hard"}]/*__END__*/;
+const SJT=/*__SJT__*/[{"scenario": "You discover a data error in a dashboard you delivered to a client last week, and the client hasn't noticed it yet. The error slightly overstates one performance metric.", "options": ["Quietly fix it in the next scheduled update and hope no one notices.", "Immediately tell your manager about the error and propose sending a corrected version to the client.", "Wait to see whether the client raises it before deciding what to do.", "Fix the file silently and delete the old version so there is no trace of the mistake."], "mostEffective": 1, "leastEffective": 3, "explanation": "Raising the error promptly and proposing a correction protects the client relationship and demonstrates ownership and honesty. Deleting the old version to hide the mistake compounds the error with a cover-up, destroying trust and integrity."}, {"scenario": "During a team meeting your manager critiques your latest design, calling the layout confusing in front of colleagues. You believe you had good reasons for your choices.", "options": ["Defend your choices firmly on the spot and explain why the manager is wrong.", "Complain to colleagues afterward that the manager was unfair and picking on you.", "Thank them for the feedback, ask clarifying questions, and follow up with revisions.", "Stay silent, feel demoralized, and avoid the manager for the rest of the week."], "mostEffective": 2, "leastEffective": 1, "explanation": "Receiving the feedback openly and seeking specifics turns criticism into a chance to improve the work and the relationship. Venting to colleagues does nothing to resolve the issue and quietly damages your credibility and the team's trust."}, {"scenario": "You and a peer disagree about the technical approach for a shared deliverable. Both of you feel strongly, and the deadline is approaching.", "options": ["Discuss the trade-offs together and, if you still can't agree, escalate jointly for a decision.", "Undermine their approach in side conversations with other team members.", "Go ahead and build it your way without telling them.", "Give in immediately to avoid conflict even though you have real concerns."], "mostEffective": 0, "leastEffective": 1, "explanation": "Working through the trade-offs together and escalating jointly if needed respects the collaboration and gets a sound decision made in time. Undermining a colleague behind their back is dishonest, corrodes team trust, and still leaves the disagreement unresolved."}, {"scenario": "You forgot to send a weekly report that several people rely on, and it is now a day overdue. A colleague asks where it is.", "options": ["Blame the email system for the delay.", "Send it late without mentioning that it was overdue.", "Own the miss, notify the affected people right away, send the report, and apologize.", "Ask a colleague to say they had the report all along so it looks handled."], "mostEffective": 2, "leastEffective": 3, "explanation": "Owning the mistake and immediately getting people what they need shows accountability and keeps everyone informed. Asking a colleague to lie for you drags others into a deception and turns a small slip into a serious integrity problem."}, {"scenario": "Two managers each hand you an urgent task on the same afternoon, each expecting it done first. You cannot realistically finish both by end of day.", "options": ["Attempt both at once, splitting your attention and risking doing each poorly.", "Clarify the situation with both managers so they can align on which task takes priority.", "Do neither and wait until someone follows up to sort it out.", "Pick one at random, ignore the other, and say nothing."], "mostEffective": 1, "leastEffective": 2, "explanation": "Surfacing the conflict so the managers can agree on priorities gets the right work done and keeps everyone informed. Doing nothing until chased lets both tasks slip and signals you cannot be relied on under pressure."}, {"scenario": "A senior stakeholder sends a vague brief asking you to 'clean up the client deck and make it pop' with no further detail. You are unsure what they actually want.", "options": ["Ask a few specific clarifying questions before you start the work.", "Guess what they meant and proceed with your own interpretation.", "Complete it based on your assumptions and blame the vague brief if it turns out wrong.", "Do nothing and wait until they clarify on their own."], "mostEffective": 0, "leastEffective": 2, "explanation": "Asking targeted questions upfront saves rework and shows you take the stakeholder's intent seriously. Guessing and then blaming the brief wastes effort and shifts responsibility instead of solving the ambiguity you could have resolved in a minute."}, {"scenario": "You realize you cannot finish a project to a high standard by the deadline without cutting important quality checks. The deadline is two days away.", "options": ["Cut the quality checks silently so you can still hit the date.", "Deliver incomplete work and present it as finished.", "Miss the deadline without warning anyone in advance.", "Flag the risk to your manager early and propose a reduced scope or a short extension."], "mostEffective": 3, "leastEffective": 1, "explanation": "Raising the risk early with options lets the team make an informed decision and protects the quality of the outcome. Passing off incomplete work as finished is dishonest and sets up a failure that lands on the client or team later."}, {"scenario": "You are reviewing a junior colleague's work and find several avoidable mistakes. They are eager and clearly tried hard.", "options": ["Give specific, constructive feedback privately and offer to help them fix it.", "Point out the errors publicly in the next meeting to make a teaching example.", "Quietly fix everything yourself without telling them.", "Report the mistakes to their manager before speaking to them first."], "mostEffective": 0, "leastEffective": 1, "explanation": "Private, specific feedback with an offer to help them learn respects the person and builds their skills and confidence. Publicly making an example of them humiliates a colleague, damages trust, and teaches fear rather than improvement."}, {"scenario": "Your boss asks you to round up some performance figures in a report to make them look more impressive to leadership. The real numbers are solid but less flashy.", "options": ["Inflate the numbers fully so the report looks as impressive as possible.", "Decline, and offer to present the real numbers with helpful context that shows the story clearly.", "Inflate them slightly since it seems to be what your boss wants.", "Do it but keep a private note in case you are ever questioned about it."], "mostEffective": 1, "leastEffective": 0, "explanation": "Declining while offering to frame the honest numbers well upholds integrity and still serves your boss's real goal of a compelling report. Fully inflating the figures is misrepresentation that can mislead leadership and expose you and your boss to serious consequences."}, {"scenario": "A teammate is visibly overwhelmed and falling behind on a shared deadline that affects the whole team's deliverable. You are on track with your own tasks.", "options": ["Focus only on your own tasks and let them fall behind.", "Offer to help and share some of the workload, looping in the manager if the gap is too big.", "Point out to the manager that this teammate is too slow.", "Take over their work entirely without telling them."], "mostEffective": 1, "leastEffective": 2, "explanation": "Offering support and escalating constructively if needed protects the shared deliverable and shows genuine collaboration. Reporting the teammate as slow undercuts a colleague, offers no solution, and harms both morale and the team result."}, {"scenario": "A project you led did not deliver the results everyone expected. In the retrospective, the team looks to you to explain what happened.", "options": ["Take responsibility, analyze honestly what went wrong, and propose concrete improvements.", "Attribute the failure mainly to shortcomings of your team members.", "Downplay the disappointing results and quickly move the meeting on.", "Claim that external factors were entirely to blame and nothing could be done."], "mostEffective": 0, "leastEffective": 1, "explanation": "Owning the outcome and turning it into concrete lessons builds trust and makes the next project stronger. Blaming your team members dodges accountability as the lead and damages the relationships you need to succeed going forward."}, {"scenario": "Partway through a task you realize you will not meet a commitment you made to an internal stakeholder. There is still a week before it is due.", "options": ["Wait until the deadline passes before saying anything.", "Tell the stakeholder as soon as you know, with a realistic revised plan.", "Keep saying it is on track and scramble to catch up at the very end.", "Blame dependencies you never actually raised as concerns earlier."], "mostEffective": 1, "leastEffective": 2, "explanation": "Giving early notice with a revised plan lets the stakeholder adjust and shows honest, reliable communication. Insisting it is on track while it is not is a direct deception that removes any chance to plan and destroys your credibility when it surfaces."}]/*__END__*/;
+
+/* ===== quiz engine ===== */
+let quiz=null;
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor((i+1)*(parseInt(String(Date.now()+i).slice(-6))%1000)/1000);const t=a[i];a[i]=a[j]||a[i];}return a;}
+function pick(arr,n){const c=arr.slice();const out=[];while(out.length<n&&c.length){out.push(c.splice(Math.floor((c.length)*((Date.now()+out.length)%997)/997),1)[0]);}return out;}
+const cats=[...new Set(BANK.map(b=>b.category))];
+let chosenCat=null;
+const catChips=$('#catChips');
+cats.forEach(c=>{const b=document.createElement('button');b.className='chip';b.textContent=CATLABEL[c]||c;b.onclick=()=>{chosenCat=c;$$('#catChips .chip').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#startCat').disabled=false;};catChips.appendChild(b);});
+
+function startQuiz(mode){
+  let qs;
+  if(mode==='sim'){ qs=pick(BANK, Math.min(50,BANK.length)); }
+  else { qs=pick(BANK.filter(b=>b.category===chosenCat), 999); }
+  quiz={mode,qs,i:0,answers:new Array(qs.length).fill(null),endAt:mode==='sim'?Date.now()+15*60*1000:null};
+  $('#quizMenu').style.display='none'; $('#quizResult').style.display='none'; $('#quizArea').style.display='block';
+  if(mode==='sim'){tickTimer();quiz.timer=setInterval(tickTimer,1000);} else {$('#qTimer').textContent='';}
+  renderQ();
+}
+function tickTimer(){
+  const el=$('#qTimer'); const left=Math.max(0,Math.round((quiz.endAt-Date.now())/1000));
+  const m=Math.floor(left/60), s=left%60; el.textContent=m+':'+String(s).padStart(2,'0');
+  el.className='timer'+(left<=60?' danger':left<=180?' warn':'');
+  if(left<=0){clearInterval(quiz.timer);finishQuiz();}
+}
+function renderQ(){
+  const q=quiz.qs[quiz.i];
+  $('#qProg').textContent='Question '+(quiz.i+1)+' of '+quiz.qs.length+(quiz.mode==='cat'?' · '+(CATLABEL[chosenCat]||''):'');
+  $('#qText').textContent=q.q;
+  const chosen=quiz.answers[quiz.i];
+  $('#qOpts').innerHTML=q.options.map((o,idx)=>`<button class="opt ${chosen===idx?'sel':''}" data-i="${idx}"><span class="lab">${String.fromCharCode(65+idx)}</span><span>${esc(o)}</span></button>`).join('');
+  $('#qExpl').className='expl'; $('#qExpl').innerHTML='';
+  $$('#qOpts .opt').forEach(b=>b.onclick=()=>choose(+b.dataset.i));
+  $('#qNext').textContent=(quiz.i===quiz.qs.length-1)?'Finish':'Next';
+  $('#qSkip').style.display=quiz.mode==='sim'?'inline-block':'none';
+}
+function choose(idx){
+  quiz.answers[quiz.i]=idx;
+  if(quiz.mode==='cat'){
+    const q=quiz.qs[quiz.i];
+    $$('#qOpts .opt').forEach((b,i)=>{b.classList.remove('sel');if(i===q.answer)b.classList.add('correct');if(i===idx&&idx!==q.answer)b.classList.add('wrong');b.onclick=null;});
+    $('#qExpl').className='expl show'; $('#qExpl').innerHTML='<b>'+(idx===q.answer?'Correct.':'Not quite.')+'</b> '+esc(q.explanation);
+  } else {
+    $$('#qOpts .opt').forEach((b,i)=>b.classList.toggle('sel',i===idx));
+  }
+}
+$('#qNext').onclick=()=>{ if(quiz.i<quiz.qs.length-1){quiz.i++;renderQ();} else finishQuiz(); };
+$('#qSkip').onclick=()=>{ if(quiz.i<quiz.qs.length-1){quiz.i++;renderQ();} else finishQuiz(); };
+function finishQuiz(){
+  if(quiz.timer)clearInterval(quiz.timer);
+  $('#quizArea').style.display='none';
+  const correct=quiz.qs.filter((q,i)=>quiz.answers[i]===q.answer).length;
+  const attempted=quiz.answers.filter(a=>a!==null).length;
+  const byCat={};
+  quiz.qs.forEach((q,i)=>{byCat[q.category]=byCat[q.category]||{c:0,t:0};byCat[q.category].t++;if(quiz.answers[i]===q.answer)byCat[q.category].c++;});
+  let html='<div class="panel result"><div class="k">Your result</div>'
+    +'<div class="big">'+correct+' / '+quiz.qs.length+'</div>'
+    +'<p class="lead" style="font-size:14px">'+attempted+' attempted'+(quiz.mode==='sim'?'. On the real CCAT, average is about 24 out of 50; 30+ is competitive.':'.')+'</p>'
+    +'<div class="bd">'+Object.keys(byCat).map(c=>{const b=byCat[c];const pct=Math.round(100*b.c/b.t);return '<div class="row"><div>'+(CATLABEL[c]||c)+'<div class="bar-mini"><i style="width:'+pct+'%"></i></div></div><div>'+b.c+'/'+b.t+'</div></div>';}).join('')+'</div>'
+    +'<div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn" id="againBtn">Practice again</button><button class="btn ghost" id="reviewBtn">Review answers</button></div></div>'
+    +'<div id="reviewList" style="display:none"></div>';
+  const r=$('#quizResult'); r.style.display='block'; r.innerHTML=html;
+  $('#againBtn').onclick=()=>{r.style.display='none';$('#quizMenu').style.display='block';};
+  $('#reviewBtn').onclick=()=>{
+    const rl=$('#reviewList'); if(rl.style.display==='block'){rl.style.display='none';return;}
+    rl.style.display='block';
+    rl.innerHTML=quiz.qs.map((q,i)=>{const you=quiz.answers[i];const ok=you===q.answer;
+      return '<div class="panel"><div class="qprog">Q'+(i+1)+' · '+(CATLABEL[q.category]||q.category)+'</div><div style="font-weight:600;margin:6px 0">'+esc(q.q)+'</div>'
+        +q.options.map((o,idx)=>'<div class="opt '+(idx===q.answer?'correct':(idx===you&&!ok?'wrong':''))+'" style="pointer-events:none;margin-bottom:6px"><span class="lab">'+String.fromCharCode(65+idx)+'</span><span>'+esc(o)+'</span></div>').join('')
+        +'<div class="expl show">'+esc(q.explanation)+'</div></div>';}).join('');
+  };
+}
+$('#startSim').onclick=()=>startQuiz('sim');
+$('#startCat').onclick=()=>{if(chosenCat)startQuiz('cat');};
+
+/* ===== behavioural: STAR trainer ===== */
+const STARQS=[
+ {val:'Get It Done',q:'Tell me about a time you took ownership of something outside your remit or delivered under real pressure.',fit:'HMRC: you were handed the notification strategy soon after joining and owned it end to end, from research to a proposal presented to senior stakeholders.'},
+ {val:'Never Settle',q:'Tell me about a time you pushed past what was asked, or raised the standard of something.',fit:'Mining Journal: the brief was to redesign the site, and you went deeper, benchmarking competitors and reworking the whole subscription journey.'},
+ {val:'Think Deeper',q:'Tell me about a decision you made using data, or how you found the root cause of a problem.',fit:'DKSCORE: you pair BigQuery usage data with user feedback to locate where users drop off before deciding what to change.'},
+ {val:'Deliver WOW',q:'Tell me about a time you made something complex simple for users.',fit:'Mining Journal: you cut a six-step checkout to three and halved the touchpoints, so subscribing felt effortless.'},
+ {val:'Dream Team',q:'Tell me about working closely with engineers or product people, or handling a disagreement.',fit:'Stratagile and HMRC: you worked daily with product and engineering teams to ship, and across a multidisciplinary team at HMRC.'}
+];
+let starData; try{starData=JSON.parse(localStorage.getItem('prep-star')||'{}')}catch(e){starData={}}
+function saveStar(){localStorage.setItem('prep-star',JSON.stringify(starData));}
+$('#starList').innerHTML=STARQS.map((x,i)=>{
+  const d=starData[i]||{};
+  return '<details class="starq"><summary><span class="val">'+esc(x.val)+'</span> — '+esc(x.q)+'</summary>'
+    +'<div class="hint">Your best fit: '+esc(x.fit)+'</div>'
+    +'<div class="starbox">'
+    +['S — Situation','T — Task','A — Action','R — Result'].map((lab,k)=>{const key=['s','t','a','r'][k];return '<div><label>'+lab+'</label><textarea data-i="'+i+'" data-k="'+key+'" placeholder="...">'+esc(d[key]||'')+'</textarea></div>';}).join('')
+    +'</div></details>';
+}).join('');
+$$('#starList textarea').forEach(t=>t.addEventListener('input',()=>{const i=t.dataset.i,k=t.dataset.k;starData[i]=starData[i]||{};starData[i][k]=t.value;saveStar();}));
+
+/* ===== SJT ===== */
+$('#sjtArea').innerHTML=SJT.map((s,i)=>{
+  return '<div class="panel"><div class="k">Scenario '+(i+1)+'</div><div style="font-weight:600;margin-bottom:10px">'+esc(s.scenario)+'</div>'
+    +'<div class="opts">'+s.options.map((o,idx)=>'<div class="opt" style="pointer-events:none"><span class="lab">'+String.fromCharCode(65+idx)+'</span><span>'+esc(o)+'</span></div>').join('')+'</div>'
+    +'<button class="btn ghost" style="margin-top:10px" onclick="this.nextElementSibling.classList.add(\'show\');this.style.display=\'none\'">Reveal best and worst</button>'
+    +'<div class="expl">Most effective: <b>'+String.fromCharCode(65+s.mostEffective)+'</b>. Least effective: <b>'+String.fromCharCode(65+s.leastEffective)+'</b>. '+esc(s.explanation)+'</div></div>';
+}).join('');
+</script>
+</body>
+</html>
