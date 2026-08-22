@@ -107,22 +107,55 @@
   .mfGrid label{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--faint)}
   .mfGrid input{background:var(--bg3);border:1px solid var(--line);border-radius:9px;color:var(--text);font-family:var(--sans);font-size:14.5px;padding:9px 11px}
   .mfGrid input:focus{outline:none;border-color:var(--acc)}
-  .offerCard{position:relative;border-radius:18px;overflow:hidden;margin:14px 0;border:1px solid var(--line2);
-    background:linear-gradient(155deg,#1a1630,#0e1424 60%,#101a2e);min-height:200px;opacity:.55;transition:opacity .5s}
-  :root[data-theme="light"] .offerCard{background:linear-gradient(155deg,#efeaff,#eef3ff 60%,#eafaf3)}
-  .offerCard.live{opacity:1}
-  .offerGlow{position:absolute;inset:-40%;background:radial-gradient(circle at 30% 20%,rgba(139,124,247,.4),transparent 45%),radial-gradient(circle at 80% 90%,rgba(58,206,154,.28),transparent 45%);animation:drift 12s ease-in-out infinite alternate}
-  @keyframes drift{from{transform:translate(0,0)}to{transform:translate(4%,3%)}}
-  #confetti{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-  .offerInner{position:relative;padding:clamp(22px,5vw,42px);text-align:center}
-  .offerSeal{width:46px;height:46px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;font-size:22px;
-    background:var(--acc);color:var(--acc-ink);box-shadow:0 6px 24px rgba(139,124,247,.5)}
-  .offerKick{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);font-weight:800;margin-bottom:8px}
-  .offerTitle{font-size:clamp(24px,4.5vw,38px);font-weight:800;letter-spacing:-.02em;margin:0 0 10px;text-wrap:balance}
-  .offerBody{color:var(--text);font-size:clamp(15px,2.2vw,18px);line-height:1.6;max-width:52ch;margin:0 auto 14px}
-  .offerBody b{color:var(--acc)}
-  .offerSign{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:18px;color:var(--muted)}
-  .offerNote{margin-top:16px;font-size:11px;color:var(--faint);letter-spacing:.03em}
+  .momentHint{font-size:13.5px;color:var(--faint);margin:12px 2px}
+  /* dramatic branded moment overlay */
+  .momentOverlay{position:fixed;inset:0;z-index:200;display:none;place-items:center;
+    background:rgba(4,6,10,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:20px;overflow:auto}
+  .momentOverlay.open{display:grid;animation:ovin .4s ease}
+  @keyframes ovin{from{opacity:0}to{opacity:1}}
+  #confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:210}
+  .momentX{position:fixed;top:16px;right:18px;z-index:230;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.25);
+    background:rgba(0,0,0,.4);color:#fff;font-size:16px;display:none;place-items:center}
+  .momentOverlay.open .momentX{display:grid}
+  /* buzzing notification */
+  .phone{position:relative;z-index:220;width:min(420px,92vw)}
+  .notif{display:flex;gap:12px;align-items:flex-start;background:rgba(28,30,36,.96);border:1px solid rgba(255,255,255,.14);
+    border-radius:18px;padding:14px 16px;box-shadow:0 20px 60px rgba(0,0,0,.55);opacity:0;transform:translateY(-40px) scale(.96)}
+  .notif.in{animation:notifIn .6s cubic-bezier(.2,.9,.3,1.3) forwards,buzz .5s .5s ease 2}
+  .notif.out{animation:notifOut .4s ease forwards}
+  @keyframes notifIn{to{opacity:1;transform:none}}
+  @keyframes notifOut{to{opacity:0;transform:translateY(-30px) scale(.96)}}
+  @keyframes buzz{0%,100%{margin-left:0}20%{margin-left:-4px}40%{margin-left:5px}60%{margin-left:-3px}80%{margin-left:2px}}
+  .nIcon{width:40px;height:40px;border-radius:11px;flex:none;display:grid;place-items:center;font-weight:800;font-size:19px;color:#fff;background:var(--brand-accent,#8B7CF7)}
+  .nText{flex:1;min-width:0;color:#fff}
+  .nApp{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:2px}
+  .nFrom{font-weight:750;font-size:14.5px}
+  .nSub{font-size:13.5px;color:rgba(255,255,255,.7);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* the branded email */
+  .email{position:relative;z-index:220;width:min(560px,94vw);background:var(--brand-paper,#fff);color:var(--brand-ink,#0f1115);
+    border-radius:16px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.6);display:none;transform:scale(.9);opacity:0}
+  .email.in{display:block;animation:emIn .55s cubic-bezier(.2,.9,.3,1.2) forwards}
+  @keyframes emIn{to{transform:scale(1);opacity:1}}
+  .emHead{display:flex;align-items:center;gap:12px;padding:18px 22px;background:var(--brand-bg,#0A0A0A);color:var(--brand-fg,#fff)}
+  .emLogo{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:20px;
+    background:var(--brand-accent,#8B7CF7);color:#fff}
+  .emName{font-weight:800;font-size:19px;letter-spacing:-.02em}
+  .emMeta{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 22px 6px;flex-wrap:wrap}
+  .emMetaL{display:flex;flex-direction:column;line-height:1.3}
+  .emFrom{font-weight:700;font-size:14px;color:var(--brand-ink,#0f1115)}
+  .emTo{font-size:12px;color:#8a8f98}
+  .emTag{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-accent,#8B7CF7);
+    border:1px solid color-mix(in srgb,var(--brand-accent,#8B7CF7) 45%,transparent);padding:3px 9px;border-radius:999px;white-space:nowrap}
+  .emSubject{padding:6px 22px 4px;font-size:clamp(19px,3.2vw,26px);font-weight:800;letter-spacing:-.02em;min-height:1.2em;text-wrap:balance;color:var(--brand-ink,#0f1115)}
+  .emBody{padding:8px 22px 4px;font-size:15.5px;line-height:1.66;color:#2a2f37}
+  .emBody .ln{opacity:0;transform:translateY(6px);animation:lnIn .5s ease forwards}
+  .emBody b{color:var(--brand-accent,#8B7CF7)}
+  .emActions{padding:12px 22px 6px}
+  .emAccept{background:var(--brand-accent,#8B7CF7);color:#fff;border:none;border-radius:10px;padding:12px 20px;font-weight:750;font-size:15px;box-shadow:0 8px 24px color-mix(in srgb,var(--brand-accent,#8B7CF7) 45%,transparent)}
+  .emAccept.done{background:#2a2f37}
+  .emFoot{padding:12px 22px 18px;font-size:11px;color:#9aa0aa;letter-spacing:.02em}
+  @keyframes lnIn{to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.notif,.email,.email .ln{animation:none!important;opacity:1!important;transform:none!important}}
   .affirm{font-size:clamp(18px,3vw,24px);font-weight:700;letter-spacing:-.01em;line-height:1.4;color:var(--text);min-height:2.2em;text-wrap:balance}
   .affirm b{color:var(--acc)}
   .opts{display:flex;flex-direction:column;gap:9px}
@@ -359,16 +392,30 @@
       <button class="btn" id="mfPlay" style="margin-top:12px">Play the moment ✨</button>
     </div>
 
-    <div class="offerCard" id="offerCard">
-      <div class="offerGlow"></div>
+    <div class="momentHint" id="momentHint">Fill in your target above and press <b>Play the moment</b> to watch the offer land in your inbox.</div>
+
+    <div class="momentOverlay" id="momentOverlay" aria-hidden="true">
       <canvas id="confetti"></canvas>
-      <div class="offerInner">
-        <div class="offerSeal">✦</div>
-        <div class="offerKick" id="offerKick">The call comes in</div>
-        <h2 class="offerTitle" id="offerTitle">Congratulations, Yashna</h2>
-        <p class="offerBody" id="offerBody"></p>
-        <div class="offerSign">Welcome to the team.</div>
-        <div class="offerNote">A manifestation board, made by you, for you.</div>
+      <button class="momentX" id="momentX" aria-label="Close">✕</button>
+      <div class="phone" id="phoneBuzz">
+        <div class="notif" id="notif">
+          <span class="nIcon" id="nIcon">R</span>
+          <div class="nText"><div class="nApp"><span id="nAppName">Mail</span><span class="nNow">now</span></div><div class="nFrom" id="nFrom">Revolut Talent Team</div><div class="nSub" id="nSub">Your offer is here</div></div>
+        </div>
+      </div>
+      <div class="email" id="email">
+        <div class="emHead" id="emHead">
+          <span class="emLogo" id="emLogo">R</span>
+          <span class="emName" id="emName">Revolut</span>
+        </div>
+        <div class="emMeta">
+          <div class="emMetaL"><span class="emFrom" id="emFrom">Revolut Talent Team</span><span class="emTo">to yashna</span></div>
+          <span class="emTag">✦ manifestation</span>
+        </div>
+        <div class="emSubject" id="emSubject"></div>
+        <div class="emBody" id="emBody"></div>
+        <div class="emActions"><button class="emAccept" id="emAccept">Accept offer</button></div>
+        <div class="emFoot">Your manifestation board · not a real email</div>
       </div>
     </div>
 
@@ -704,32 +751,101 @@ function fillAffirm(){const c=($('#mfCompany').value||'your dream company');cons
   $('#affirm').innerHTML=AFFIRMS[affI%AFFIRMS.length].replace('%C%',esc(c)).replace('%R%',esc(r));}
 $('#affirmNext').onclick=()=>{affI++;fillAffirm();};
 fillAffirm();
+/* company brand themes for the offer email */
+const BRANDS={
+ revolut:{bg:'#0a0a0a',fg:'#ffffff',accent:'#7A6FF0',ink:'#0f1115',logo:'R'},
+ monzo:{bg:'#ff3464',fg:'#ffffff',accent:'#ff3464',ink:'#231018',logo:'M'},
+ starling:{bg:'#5f2ecb',fg:'#ffffff',accent:'#5f2ecb',ink:'#20163a',logo:'S'},
+ wise:{bg:'#163300',fg:'#9fe870',accent:'#2f7a1e',ink:'#122a00',logo:'W'},
+ google:{bg:'#ffffff',fg:'#202124',accent:'#1a73e8',ink:'#202124',logo:'G',line:1},
+ meta:{bg:'#0a0a0a',fg:'#ffffff',accent:'#0064E0',ink:'#111a2b',logo:'M'},
+ facebook:{bg:'#0a0a0a',fg:'#ffffff',accent:'#1877F2',ink:'#111a2b',logo:'f'},
+ apple:{bg:'#0a0a0a',fg:'#ffffff',accent:'#2997ff',ink:'#1d1d1f',logo:'A'},
+ amazon:{bg:'#232F3E',fg:'#ffffff',accent:'#FF9900',ink:'#232F3E',logo:'a'},
+ microsoft:{bg:'#ffffff',fg:'#2f2f2f',accent:'#0067b8',ink:'#2f2f2f',logo:'M',line:1},
+ stripe:{bg:'#0A2540',fg:'#ffffff',accent:'#635BFF',ink:'#0A2540',logo:'S'},
+ palantir:{bg:'#000000',fg:'#ffffff',accent:'#7d8896',ink:'#101418',logo:'P'},
+ netflix:{bg:'#141414',fg:'#ffffff',accent:'#E50914',ink:'#141414',logo:'N'},
+ spotify:{bg:'#121212',fg:'#ffffff',accent:'#1DB954',ink:'#121212',logo:'S'},
+ airbnb:{bg:'#ffffff',fg:'#222222',accent:'#FF385C',ink:'#222222',logo:'A',line:1},
+ jpmorgan:{bg:'#0A1F44',fg:'#ffffff',accent:'#b99976',ink:'#0A1F44',logo:'J'},
+ goldmansachs:{bg:'#0a1a2f',fg:'#ffffff',accent:'#6b98c9',ink:'#0a1a2f',logo:'G'},
+ mckinsey:{bg:'#051c2c',fg:'#ffffff',accent:'#00a9f4',ink:'#051c2c',logo:'M'},
+ deloitte:{bg:'#101010',fg:'#ffffff',accent:'#86BC25',ink:'#101010',logo:'D'},
+ klarna:{bg:'#ffb3c7',fg:'#0a0a0a',accent:'#e0246e',ink:'#2a0f1a',logo:'K'},
+ nike:{bg:'#111111',fg:'#ffffff',accent:'#ff5a1f',ink:'#111111',logo:'N'}
+};
+function brandFor(name){
+  const key=(name||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+  if(key){ if(BRANDS[key])return BRANDS[key]; for(const k in BRANDS){if(key.indexOf(k)===0||k.indexOf(key)===0)return BRANDS[k];} }
+  // derive a stable brand colour from the name
+  let h=0; for(let i=0;i<(name||'x').length;i++)h=(h*31+name.charCodeAt(i))%360;
+  return {bg:'#0f1216',fg:'#ffffff',accent:'hsl('+h+' 68% 56%)',ink:'#12151b',logo:((name||'Y')[0]||'Y').toUpperCase()};
+}
+let momentTimers=[], confettiToken=0;
+function clearMomentTimers(){momentTimers.forEach(clearTimeout);momentTimers=[];}
+function typeText(el,txt,speed){el.textContent='';let i=0;const id=setInterval(()=>{el.textContent=txt.slice(0,++i);if(i>=txt.length)clearInterval(id);},speed);momentTimers.push(id);}
 function playMoment(){
   const company=($('#mfCompany').value||'').trim(), role=($('#mfRole').value||'').trim(), start=($('#mfStart').value||'').trim();
-  mf={company,role,start};localStorage.setItem('prep-manifest',JSON.stringify(mf));
-  const co=company||'your dream company', ro=role||'the role you want';
-  $('#offerKick').textContent='The call comes in';
-  $('#offerBody').innerHTML='It is real. <b>'+esc(co)+'</b> would love for you to join as <b>'+esc(ro)+'</b>'+(start?', starting '+esc(start):'')+'. Everything you have been working toward just said yes.';
-  const card=$('#offerCard');card.classList.add('live');
-  fillAffirm();
-  burstConfetti();
-  card.scrollIntoView({behavior:'smooth',block:'center'});
+  mf={company,role,start};localStorage.setItem('prep-manifest',JSON.stringify(mf));fillAffirm();
+  const co=company||'Your Dream Co', ro=role||'the role you want', b=brandFor(company);
+  const ov=$('#momentOverlay');
+  ov.style.setProperty('--brand-bg',b.bg);ov.style.setProperty('--brand-fg',b.fg);
+  ov.style.setProperty('--brand-accent',b.accent);ov.style.setProperty('--brand-ink',b.ink);
+  ov.style.setProperty('--brand-paper','#ffffff');
+  $('#nIcon').textContent=b.logo;$('#nAppName').textContent='Mail';
+  $('#nFrom').textContent=co+' Talent Team';$('#nSub').textContent='Your offer is here';
+  $('#emLogo').textContent=b.logo;$('#emName').textContent=co;$('#emFrom').textContent=co+' Talent Team';
+  $('#emHead').style.borderBottom=b.line?'1px solid rgba(0,0,0,.1)':'none';
+  const accept=$('#emAccept');accept.textContent='Accept offer';accept.classList.remove('done');
+  const subject='You did it. An offer from '+co+' ✦';
+  const lines=[
+    {t:'Dear Yashna,'},
+    {t:'We are thrilled to offer you the position of <b>'+esc(ro)+'</b> at <b>'+esc(co)+'</b>'+(start?', starting <b>'+esc(start)+'</b>':'')+'.',raw:true},
+    {t:'Your work stood out from an exceptional field, and the whole team cannot wait for you to join.'},
+    {t:'Welcome aboard.'},
+    {t:'— '+esc(co)+' Talent Team',raw:true}
+  ];
+  // reset + open
+  clearMomentTimers();confettiToken++;
+  const notif=$('#notif'), email=$('#email'), body=$('#emBody'), subj=$('#emSubject');
+  notif.className='notif';notif.style.display='flex';email.className='email';email.style.display='none';
+  subj.textContent='';body.innerHTML='';
+  ov.classList.add('open');ov.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+  const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const openEmail=()=>{
+    notif.style.display='none';email.style.display='block';email.classList.add('in');
+    if(reduce){subj.textContent=subject;} else {typeText(subj,subject,26);}
+    body.innerHTML=lines.map((l,i)=>'<div class="ln" style="animation-delay:'+(reduce?0:(0.55+i*0.55))+'s">'+(l.raw?l.t:esc(l.t))+'</div>').join('');
+    momentTimers.push(setTimeout(()=>burstConfetti(),reduce?0:700));
+  };
+  if(reduce){notif.classList.add('in');openEmail();return;}
+  requestAnimationFrame(()=>notif.classList.add('in'));
+  momentTimers.push(setTimeout(()=>{notif.classList.remove('in');notif.classList.add('out');},2300));
+  momentTimers.push(setTimeout(openEmail,2800));
 }
+function closeMoment(){const ov=$('#momentOverlay');ov.classList.remove('open');ov.setAttribute('aria-hidden','true');document.body.style.overflow='';clearMomentTimers();confettiToken++;}
 $('#mfPlay').onclick=playMoment;
-/* confetti */
+$('#momentX').onclick=closeMoment;
+$('#momentOverlay').addEventListener('click',e=>{if(e.target===$('#momentOverlay'))closeMoment();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#momentOverlay').classList.contains('open'))closeMoment();});
+$('#emAccept').onclick=function(){this.textContent='You said yes ✨';this.classList.add('done');burstConfetti();};
+/* confetti (full screen) */
 function burstConfetti(){
-  const cv=$('#confetti'),card=$('#offerCard');if(!cv)return;
-  const w=cv.width=card.clientWidth,h=cv.height=card.clientHeight,ctx=cv.getContext('2d');
-  const cols=['#8B7CF7','#3ACE9A','#E0A83E','#E0625E','#ffffff'];
-  const P=[];for(let i=0;i<140;i++)P.push({x:w/2+(i%2?1:-1)*Math.abs(((i*97)%w)-w/2)*0.2,y:h*0.35,
-    vx:((i*53)%100-50)/8,vy:-(4+((i*31)%60)/10),g:0.16+((i*17)%10)/60,
-    s:4+((i*13)%6),c:cols[i%cols.length],r:((i*29)%360),vr:((i*7)%10-5)});
-  let f=0;function frame(){f++;ctx.clearRect(0,0,w,h);
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const cv=$('#confetti');if(!cv)return;const myToken=++confettiToken;
+  const w=cv.width=window.innerWidth,h=cv.height=window.innerHeight,ctx=cv.getContext('2d');
+  const cols=['#8B7CF7','#3ACE9A','#E0A83E','#E0625E','#ffffff','#5AC8FA'];
+  const P=[];for(let i=0;i<180;i++)P.push({x:w*(0.15+((i*53)%70)/100),y:-20-((i*37)%200),
+    vx:((i*53)%100-50)/9,vy:2+((i*31)%60)/12,g:0.05+((i*17)%10)/120,
+    s:5+((i*13)%7),c:cols[i%cols.length],r:((i*29)%360),vr:((i*7)%12-6)});
+  let f=0;function frame(){if(myToken!==confettiToken){ctx.clearRect(0,0,w,h);return;}
+    f++;ctx.clearRect(0,0,w,h);
     P.forEach(p=>{p.vy+=p.g;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;
-      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r*Math.PI/180);ctx.fillStyle=p.c;ctx.globalAlpha=Math.max(0,1-f/90);
-      ctx.fillRect(-p.s/2,-p.s/2,p.s,p.s*0.6);ctx.restore();});
-    if(f<90)requestAnimationFrame(frame);else ctx.clearRect(0,0,w,h);}
-  if(!window.matchMedia||!matchMedia('(prefers-reduced-motion:reduce)').matches)requestAnimationFrame(frame);
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r*Math.PI/180);ctx.fillStyle=p.c;ctx.globalAlpha=Math.max(0,1-f/150);
+      ctx.fillRect(-p.s/2,-p.s/2,p.s,p.s*0.62);ctx.restore();});
+    if(f<150)requestAnimationFrame(frame);else ctx.clearRect(0,0,w,h);}
+  requestAnimationFrame(frame);
 }
 </script>
 </body>
