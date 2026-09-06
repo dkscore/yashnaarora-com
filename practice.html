@@ -62,6 +62,9 @@
   .chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
   .chip{border:1px solid var(--line2);background:none;color:var(--muted);font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px}
   .chip.on{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+  .hvrow{display:flex;gap:7px;align-items:center;font-size:13px;color:var(--muted);margin:8px 0 0}
+  .hvrow input{accent-color:var(--acc)}
+  .hvprep{font-size:13px;font-weight:700;color:var(--warn);margin-top:6px;min-height:18px}
   /* quiz */
   .quizhead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
   .timer{font-variant-numeric:tabular-nums;font-weight:800;font-size:20px}
@@ -365,6 +368,8 @@
     <div class="panel" id="recPanel">
       <div class="recTop">
         <div class="chips" id="recCats" style="margin:0"></div>
+        <label class="hvrow"><input type="checkbox" id="hvMode"> HireVue timing: 30s prep &rarr; auto-record &rarr; 2:00 cap (real JPM format: 3&ndash;5 questions, one retake)</label>
+        <div class="hvprep" id="hvPrepTxt"></div>
       </div>
       <div class="recStage">
         <div class="recQ" id="recQ">Press <b>Start camera</b>, then <b>New question</b> to begin.</div>
@@ -704,21 +709,69 @@ const IQ=[
  {c:'Deep dive',q:'Take me through the Mining Journal redesign and why you made each key decision.'},
  {c:'Deep dive',q:'What work are you most proud of, and what would you do differently now?'},
  {c:'Deep dive',q:'Tell me about yourself and your path into design in 60 seconds.'},
+ /* JPM HireVue — 2027 Chase Digital Development Programme (London, req 210774321) + reported JPM HireVue classics */
+ {c:'JPM HireVue',q:'Why JPMorgan Chase, and why the Digital Development Programme specifically?'},
+ {c:'JPM HireVue',q:'Tell us about yourself.'},
+ {c:'JPM HireVue',q:'Walk me through your resume.'},
+ {c:'JPM HireVue',q:'Why are you the right candidate for this programme?'},
+ {c:'JPM HireVue',q:'What does your five-year career plan look like?'},
+ {c:'JPM HireVue',q:'What would you consider your greatest strength?'},
+ {c:'JPM HireVue',q:'What would you consider your greatest weakness?'},
+ {c:'JPM HireVue',q:'What unique skills would you contribute to our teams?'},
+ {c:'JPM HireVue',q:'Describe a time you had to resolve a conflict within a team.'},
+ {c:'JPM HireVue',q:'Tell us about a time you worked with an underperforming teammate.'},
+ {c:'JPM HireVue',q:'JPMorgan employs a diverse group of people. Describe your experience working with a diverse team.'},
+ {c:'JPM HireVue',q:'Tell us about a time you had to balance multiple priorities.'},
+ {c:'JPM HireVue',q:'Tell us about a mistake you made and what you learned from it.'},
+ {c:'JPM HireVue',q:'Tell us about a time your team rejected your suggestions. How did you respond?'},
+ {c:'JPM HireVue',q:'Tell us about the last time you received feedback and the impact it had on you.'},
+ {c:'JPM HireVue',q:'Tell us about a time you solved a problem by thinking creatively.'},
+ {c:'JPM HireVue',q:'What motivates you to go the extra mile in your work?'},
+ {c:'JPM HireVue',q:'Tell me about a time you changed your communication style to fit your audience.'},
+ {c:'JPM HireVue',q:'What current events interest you right now? Pick a banking or fintech story.'},
+ {c:'JPM HireVue',q:'What do you think Chase does differently from other banks?'},
+ {c:'JPM HireVue',q:'Why product management rather than a design role?'},
+ {c:'JPM HireVue',q:'Pitch one fresh idea you would bring to the Chase app.'},
+ {c:'JPM HireVue',q:'What does excellent customer experience mean in digital banking, and who does it well?'},
+ {c:'JPM HireVue',q:'Tell me about a time you used data to make a decision or change a mind.'},
+ {c:'JPM HireVue',q:'Describe a time you worked with developers or engineers to ship something.'},
+ {c:'JPM HireVue',q:'What must Chase get right to win in the UK market?'},
+ {c:'JPM HireVue',q:'How is AI changing digital banking? Give one opportunity and one risk.'},
+ {c:'JPM HireVue',q:'Tell me about a time you took the lead without being asked.'},
+ {c:'JPM HireVue',q:'Describe a time you had to learn something new quickly.'},
+ {c:'JPM HireVue',q:'What is your biggest achievement?'},
 ];
 let recCat='All', recStream=null, recMR=null, recChunks=[], recTimerId=null, recStartTs=0;
+/* HireVue timing (JPM): 30s prep, then auto-record, hard 2:00 answer cap */
+const HV_PREP=30, HV_ANS=120;
+let hvPrepId=null;
+function hvOn(){const c=$('#hvMode');return !!(c&&c.checked);}
+function hvCancelPrep(){if(hvPrepId){clearInterval(hvPrepId);hvPrepId=null;}const el=$('#hvPrepTxt');if(el)el.textContent='';}
+function hvStartPrep(){
+  hvCancelPrep();
+  let left=HV_PREP; const el=$('#hvPrepTxt');
+  const show=()=>{el.textContent='Prep: 0:'+String(left).padStart(2,'0')+(recStream?' — recording starts automatically':' — start the camera to auto-record');};
+  show();
+  hvPrepId=setInterval(()=>{left--;
+    if(left<=0){clearInterval(hvPrepId);hvPrepId=null;
+      if(recStream&&(!recMR||recMR.state!=='recording')){el.textContent='';startRec();}
+      else{el.textContent='Prep over — hit Record when ready.';}}
+    else show();},1000);
+}
 const recCatsEl=$('#recCats');
-['All','Behavioural','Product sense','Analytical','Deep dive'].forEach(c=>{
+['All','JPM HireVue','Behavioural','Product sense','Analytical','Deep dive'].forEach(c=>{
   const b=document.createElement('button');b.className='chip'+(c==='All'?' on':'');b.textContent=c;
-  b.onclick=()=>{recCat=c;$$('#recCats .chip').forEach(x=>x.classList.remove('on'));b.classList.add('on');};
+  b.onclick=()=>{recCat=c;$$('#recCats .chip').forEach(x=>x.classList.remove('on'));b.classList.add('on');if(c==='JPM HireVue'&&$('#hvMode'))$('#hvMode').checked=true;};
   recCatsEl.appendChild(b);
 });
 function newQuestion(){
   const pool=IQ.filter(x=>recCat==='All'||x.c===recCat);
   const q=pool[Math.floor((Date.now()>>4)%pool.length)] || pool[0];
   // avoid immediate repeat
-  let pick=pool[Math.floor(((Date.now())%(pool.length*997))/997)]||q;
+  let pick=pool[Math.floor(Math.random()*pool.length)]||q;
   $('#recQ').innerHTML='<span style="color:var(--acc);font-weight:800;font-size:12px;letter-spacing:.06em;text-transform:uppercase">'+esc(pick.c)+'</span><br>'+esc(pick.q);
   $('#recQ').dataset.q=pick.q;
+  if(hvOn())hvStartPrep(); else hvCancelPrep();
 }
 function pickMime(){
   const cands=['video/mp4;codecs=avc1','video/mp4','video/webm;codecs=vp9','video/webm;codecs=vp8','video/webm'];
@@ -742,6 +795,7 @@ async function startCam(){
 }
 function startRec(){
   if(!recStream)return;
+  hvCancelPrep();
   const mime=pickMime();recChunks=[];
   try{recMR=mime?new MediaRecorder(recStream,{mimeType:mime}):new MediaRecorder(recStream);}
   catch(e){$('#recHint').textContent='Recording is not supported in this browser.';return;}
@@ -761,8 +815,18 @@ function startRec(){
   $('#recStart').style.display='none';$('#recStop').style.display='inline-block';$('#recNewQ').disabled=true;
   $('#recPlay').style.display='none';$('#recLive').style.display='block';
 }
-function tickRec(){const s=Math.floor((Date.now()-recStartTs)/1000);$('#recTimer').textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
+function tickRec(){
+  const s=Math.floor((Date.now()-recStartTs)/1000);
+  if(hvOn()){
+    const left=Math.max(0,HV_ANS-s);
+    $('#recTimer').textContent='-'+Math.floor(left/60)+':'+String(left%60).padStart(2,'0');
+    if(left<=0){stopRec();const el=$('#hvPrepTxt');if(el)el.textContent='Time — HireVue cuts you off exactly like this. Review the take below.';}
+  } else {
+    $('#recTimer').textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+  }
+}
 function stopRec(){
+  hvCancelPrep();
   if(recMR&&recMR.state!=='inactive')recMR.stop();
   clearInterval(recTimerId);$('#recDot').style.display='none';$('#recTimer').style.display='none';
   $('#recStop').style.display='none';$('#recStart').style.display='inline-block';$('#recNewQ').disabled=false;
