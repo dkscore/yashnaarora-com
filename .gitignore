@@ -10,3 +10,6 @@ node_modules/
 # Local env
 .env
 .env.*
+
+# Local LLM dev key (Cloudflare wrangler) — NEVER commit
+.dev.vars
