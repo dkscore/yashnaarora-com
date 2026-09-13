@@ -17,8 +17,11 @@ const RATE_LIMIT = 10; // max requests ...
 const RATE_WINDOW_MS = 60_000; // ...per this window, per IP
 const MODEL = "claude-opus-5";
 const DEFAULT_MAX_TOKENS = 800;
-const MAX_TOKENS_CAP = 4000; // server-side ceiling regardless of what the client asks for
-const PROMPT_CAP = 24000; // chars — DOWA sends raw stage inputs + memory context
+const MAX_TOKENS_CAP = 8000; // server-side ceiling regardless of what the client asks for
+// DOWA sends full selected-source contents (up to all five resources: boards,
+// transcripts, packs) + memory + the structured response contract. Sized for
+// the largest legitimate selection; spend cap + rate limit bound the cost.
+const PROMPT_CAP = 160000; // chars
 const SYSTEM_CAP = 8000; // chars
 const EFFORTS = new Set(["low", "medium", "high"]); // allowed effort levels from the client
 const DEFAULT_EFFORT = "low"; // keeps demo latency snappy; raise for deeper reasoning
