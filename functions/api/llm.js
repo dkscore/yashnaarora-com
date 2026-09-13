@@ -17,7 +17,7 @@ const RATE_LIMIT = 10; // max requests ...
 const RATE_WINDOW_MS = 60_000; // ...per this window, per IP
 const MODEL = "claude-opus-5";
 const DEFAULT_MAX_TOKENS = 800;
-const MAX_TOKENS_CAP = 8000; // server-side ceiling regardless of what the client asks for
+const MAX_TOKENS_CAP = 12000; // server-side ceiling; NB adaptive thinking spends from the same budget
 // DOWA sends full selected-source contents (up to all five resources: boards,
 // transcripts, packs) + memory + the structured response contract. Sized for
 // the largest legitimate selection; spend cap + rate limit bound the cost.
@@ -125,8 +125,9 @@ export async function onRequestPost({ request, env }) {
     .map((b) => b.text)
     .join("")
     .trim();
-  // 5. Return ONLY the model text to the browser.
-  return json({ text });
+  // 5. Return ONLY the model text to the browser (+ stop reason so the client
+  //    can detect a truncated response instead of parsing broken JSON).
+  return json({ text, stop: data?.stop_reason ?? null });
 }
 
 // Reject non-POST methods cleanly.
