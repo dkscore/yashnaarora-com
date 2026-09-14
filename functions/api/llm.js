@@ -116,8 +116,11 @@ export async function onRequestPost({ request, env }) {
   }
 
   if (!upstream.ok) {
-    // Surface a generic error — never leak provider internals or the key.
-    return json({ error: `LLM provider error (${upstream.status}).` }, 502);
+    // TEMPORARY DIAGNOSTIC (to be reverted immediately): include the provider
+    // error body so we can see WHY requests are rejected. Error bodies contain
+    // no secrets. Normal behaviour: generic error only.
+    const detail = (await upstream.text().catch(() => "")).slice(0, 600);
+    return json({ error: `LLM provider error (${upstream.status}).`, detail }, 502);
   }
 
   const data = await upstream.json();
