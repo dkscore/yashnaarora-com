@@ -15,7 +15,9 @@
 // ---- Tunables ----
 const RATE_LIMIT = 10; // max requests ...
 const RATE_WINDOW_MS = 60_000; // ...per this window, per IP
-const MODEL = "claude-opus-5";
+const MODEL = "claude-opus-5"; // production default — unchanged
+// Allowlisted override for controlled model-comparison testing only.
+const ALLOWED_MODELS = new Set(["claude-opus-5", "claude-sonnet-5"]);
 const DEFAULT_MAX_TOKENS = 800;
 const MAX_TOKENS_CAP = 12000; // server-side ceiling; NB adaptive thinking spends from the same budget
 // DOWA sends full selected-source contents (up to all five resources: boards,
@@ -84,6 +86,7 @@ export async function onRequestPost({ request, env }) {
     MAX_TOKENS_CAP
   );
   const effort = EFFORTS.has(payload.effort) ? payload.effort : DEFAULT_EFFORT;
+  const model = ALLOWED_MODELS.has(payload.model) ? payload.model : MODEL;
 
   // 4. Call Anthropic from the server. Key stays here.
   //    Thinking is adaptive by default on this model; effort controls depth/latency.
@@ -100,7 +103,7 @@ export async function onRequestPost({ request, env }) {
         "anthropic-beta": "server-side-fallback-2026-07-01",
       },
       body: JSON.stringify({
-        model: MODEL,
+        model,
         max_tokens: maxTokens,
         output_config: { effort },
         fallbacks: "default",
@@ -128,7 +131,7 @@ export async function onRequestPost({ request, env }) {
     .trim();
   // 5. Return ONLY the model text to the browser (+ stop reason so the client
   //    can detect a truncated response, and upstream timing for diagnostics).
-  return json({ text, stop: data?.stop_reason ?? null, upstream_ms: Date.now() - upstreamStart });
+  return json({ text, stop: data?.stop_reason ?? null, upstream_ms: Date.now() - upstreamStart, model });
 }
 
 // Reject non-POST methods cleanly.
