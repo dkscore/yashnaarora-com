@@ -89,6 +89,7 @@ export async function onRequestPost({ request, env }) {
   //    Thinking is adaptive by default on this model; effort controls depth/latency.
   //    Server-side refusal fallbacks enabled so a safety decline degrades gracefully.
   let upstream;
+  const upstreamStart = Date.now();
   try {
     upstream = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
@@ -126,8 +127,8 @@ export async function onRequestPost({ request, env }) {
     .join("")
     .trim();
   // 5. Return ONLY the model text to the browser (+ stop reason so the client
-  //    can detect a truncated response instead of parsing broken JSON).
-  return json({ text, stop: data?.stop_reason ?? null });
+  //    can detect a truncated response, and upstream timing for diagnostics).
+  return json({ text, stop: data?.stop_reason ?? null, upstream_ms: Date.now() - upstreamStart });
 }
 
 // Reject non-POST methods cleanly.
