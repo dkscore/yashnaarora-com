@@ -82,10 +82,10 @@
 
   /* video + explore */
   .vidwrap{display:grid; grid-template-columns:minmax(0,2fr) minmax(0,1fr); gap:28px; margin-top:34px; align-items:stretch}
-  .vid{position:relative; aspect-ratio:16/9; align-self:start; width:100%; border-radius:18px; overflow:hidden; border:1px solid var(--line-s); background:#0b0e12}
+  .vid{position:relative; aspect-ratio:16/9; width:100%; border-radius:18px; overflow:hidden; border:1px solid var(--line-s); background:#0b0e12}
   .expwrap{position:relative; min-height:0}
-  .explore{position:absolute; inset:0; overflow:auto}
-  .vid img{width:100%; height:100%; object-fit:cover; display:block}
+  .explore{min-height:100%}
+  .vid img{width:100%; height:100%; object-fit:contain; display:block}
   .vid iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
   .playbtn{position:absolute; inset:0; width:100%; height:100%; display:grid; place-items:center; background:linear-gradient(180deg,rgba(6,8,11,.08),rgba(6,8,11,.34)); border:0; cursor:pointer; padding:0}
   .playbtn .pb{width:clamp(62px,7vw,84px); height:clamp(62px,7vw,84px); border-radius:50%; background:linear-gradient(135deg,#F28E8E,#E87EA0); color:#263C43; display:grid; place-items:center; box-shadow:0 14px 40px rgba(232,126,160,.42); transition:transform .25s}
@@ -100,6 +100,10 @@
   .xbtn:hover{transform:translateY(-2px); box-shadow:0 14px 34px rgba(232,126,160,.42)}
   .xbtn:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
   .xbtn svg{flex:none}
+  .xmock{margin:0; padding-top:14px; border-top:1px solid var(--line-s); font-size:13.5px; color:var(--muted); line-height:1.65}
+  .xmock a{color:var(--accent); font-weight:600; text-decoration:underline; text-underline-offset:3px}
+  .xmock a:hover{opacity:.85}
+  .xmock a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
   @media(max-width:860px){ .vidwrap{grid-template-columns:1fr} .expwrap{position:static} .explore{position:static; padding:24px} }
 
   /* problem list */
@@ -207,6 +211,7 @@
           <p>Explore the working DOWA prototype, including its research workspace, evidence-backed analysis and design memory.</p>
           <a class="xbtn" href="https://dowa.yashnaarora.com/" target="_blank" rel="noopener noreferrer">Explore DOWA
             <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <p class="xmock">This interactive demo uses simulated AI responses to manage API credit usage. If you’d like to experience DOWA with live AI, please <a href="mailto:yashna.arora2005@gmail.com">get in touch</a>.</p>
         </aside></div>
       </div>
     </div>
